@@ -975,9 +975,26 @@ string include_file(string compiled, string from, string path)
       LOGD->write_syslog("Including non-header file '" + path + "'", LOG_ERR);
 
     comp_dep += ({ path });
-    
-    if (path == "AUTO") {
-      return path_special(compiled);
+
+    /* Don't interfere with system objects */
+    if (sscanf(compiled, "/kernel/%*s")) {
+      return path;
+    }
+    if (sscanf(compiled, USR_DIR + "/System/%*s")) {
+      return path;
+    }
+    if (sscanf(compiled, USR_DIR + "/common/%*s")) {
+      return path;
+    }
+
+    if (path == "AUTO" || path == "/include/AUTO") {
+      string altpath;
+      altpath = path_special(compiled);
+      if (altpath != "") {
+	return altpath;
+      } else {
+	return path;
+      }
     } else {
       return path;
     }
