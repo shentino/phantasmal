@@ -1,3 +1,6 @@
+Release 0.021:
+    * Fixed a bug with special include files
+
 Release 0.020:
     * Brought ObjectD up to date to reflect DGD's new source/include system
 
