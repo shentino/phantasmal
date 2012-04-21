@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# purge
+cd ~
+rm -rf dgd/phantasmal/mud
+rm -rf dgd/phantasmal/tmp
+
+# skeleton
+mkdir -p dgd
+mkdir -p dgd/phantasmal
+mkdir -p dgd/phantasmal/mud
+mkdir -p dgd/phantasmal/mud/doc
+mkdir -p dgd/phantasmal/mud/doc/kernel
+mkdir -p dgd/phantasmal/mud/usr
+mkdir -p dgd/phantasmal/mud/include
+mkdir -p dgd/phantasmal/mud/kernel
+mkdir -p dgd/phantasmal/mud/kernel/data
+mkdir -p dgd/phantasmal/mud/log
+mkdir -p dgd/phantasmal/tmp
+
+# dgd
+for d in kfun net editor parser
+do
+	ln -s ../../../git/dgd-osr/doc/$d dgd/phantasmal/mud/doc
+done
+# kernel-lib
+for d in efun hook lfun
+do
+	ln -s ../../../../../git/kernellib/doc/kernel/$d dgd/phantasmal/mud/doc/kernel
+done
+
+for d in git/kernellib/kernel/*
+do
+	ln -s ../../../../$d dgd/phantasmal/mud/kernel
+done
+
+ln -s ../../../../git/kernellib/include/kernel dgd/phantasmal/mud/include
+
+# phantasmal
+for d in git/phantasmal/mudlib/mud/usr/*
+do
+	ln -s ../../../../$d dgd/phantasmal/mud/usr
+done
+
+for d in git/phantasmal/mudlib/mud/include/*
+do
+	ln -s ../../../../$d dgd/phantasmal/mud/include
+done
+
+# lovecraft
+for d in git/phantasmal/testmud-seasofnight/mud/usr/*
+do
+	ln -s ../../../../$d dgd/phantasmal/mud/usr
+done
+
+for d in git/phantasmal/testmud-seasofnight/mud/include/*
+do
+	ln -s -f ../../../../$d dgd/phantasmal/mud/include
+done
