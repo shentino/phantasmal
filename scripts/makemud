@@ -29,9 +29,9 @@ do
 	ln -s ../../../../../git/kernellib/doc/kernel/$d dgd/phantasmal/mud/doc/kernel
 done
 
-for d in git/kernellib/kernel/*
+for d in lib obj sys
 do
-	ln -s ../../../../$d dgd/phantasmal/mud/kernel
+	ln -s ../../../../git/kernellib/kernel/$d dgd/phantasmal/mud/kernel
 done
 
 ln -s ../../../../git/kernellib/include/kernel dgd/phantasmal/mud/include
@@ -48,12 +48,12 @@ do
 done
 
 # lovecraft
-for d in git/phantasmal/testmud-seasofnight/mud/usr/*
+for d in git/phantasmal/testmud/lovecraft/mud/usr/*
 do
 	ln -s ../../../../$d dgd/phantasmal/mud/usr
 done
 
-for d in git/phantasmal/testmud-seasofnight/mud/include/*
+for d in git/phantasmal/testmud/lovecraft/mud/include/*
 do
 	ln -s -f ../../../../$d dgd/phantasmal/mud/include
 done
