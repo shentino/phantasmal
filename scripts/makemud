@@ -47,6 +47,8 @@ do
 	ln -s ../../../../$d dgd/phantasmal/mud/include
 done
 
+cp git/phantasmal/mudlib/phantasmal.dgd dgd/phantasmal
+
 # lovecraft
 for d in git/phantasmal/testmud/lovecraft/mud/usr/*
 do
