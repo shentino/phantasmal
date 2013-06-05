@@ -1,11 +1,11 @@
 telnet_port	= ([
-	"*":9999  /* telnet port number */
+	"*":50100  /* telnet port number */
 ]);			
 binary_port	= ([
-	"127.0.0.1":9888, /* Failsafe */
-	"*":9998, /* Secure Shell */
-	"*":8888, /* Mud Client */
-	"*":9988  /* Status */
+	"127.0.0.1":50110, /* Failsafe */
+	"*":50111, /* Secure Shell */
+	"*":50112, /* Mud Client */
+	"*":50113  /* Status */
 ]);   /* binary ports */
 directory = "RUN INSTALL SCRIPT FIRST!"; /* Replace with your absolute */
                                          /* path! */
