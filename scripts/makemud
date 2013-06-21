@@ -1,16 +1,23 @@
 #!/bin/bash
 
 # purge
+
+echo "Purging old layout..."
+
 cd ~
-rm -rf dgd/phantasmal/mud
+rm -rf dgd/phantasmal/mud/*
 rm -rf dgd/phantasmal/tmp
 
 # skeleton
+
+echo "Building directory skeleton..."
+
 mkdir -p dgd
 mkdir -p dgd/phantasmal
 mkdir -p dgd/phantasmal/mud
 mkdir -p dgd/phantasmal/mud/doc
 mkdir -p dgd/phantasmal/mud/doc/kernel
+mkdir -p dgd/phantasmal/mud/doc/kfun
 mkdir -p dgd/phantasmal/mud/usr
 mkdir -p dgd/phantasmal/mud/include
 mkdir -p dgd/phantasmal/mud/kernel
@@ -19,11 +26,39 @@ mkdir -p dgd/phantasmal/mud/log
 mkdir -p dgd/phantasmal/tmp
 
 # dgd
-for d in kfun net editor parser
+
+echo "Setting up dgd links..."
+
+for d in net builtin
 do
-	ln -s ../../../git/dgd-osr/doc/$d dgd/phantasmal/mud/doc
+	ln -s ../../../../git/dgd/doc/$d dgd/phantasmal/mud/doc
 done
+
+echo "Setting up lpc-doc links..."
+
+for d in editor ed-quickref Introduction parser
+do
+	ln -s ../../../../git/lpc-doc/$d dgd/phantasmal/mud/doc
+done
+
+echo "Copying kfun documents..."
+
+# defaults are in lpc-doc
+for d in git/lpc-doc/kfun/*
+do
+	cp $d dgd/phantasmal/mud/doc/kfun
+done
+
+# overwrite with any dgd specific docs
+for d in git/dgd/doc/kfun/*
+do
+	cp $d dgd/phantasmal/mud/doc/kfun
+done
+
 # kernel-lib
+
+echo "Setting up kernel library symlinks..."
+
 for d in efun hook lfun
 do
 	ln -s ../../../../../git/kernellib/doc/kernel/$d dgd/phantasmal/mud/doc/kernel
@@ -37,9 +72,17 @@ done
 ln -s ../../../../git/kernellib/include/kernel dgd/phantasmal/mud/include
 
 # phantasmal
+
+echo "Setting up phantasmal symlinks..."
+
 for d in git/phantasmal/mudlib/mud/usr/*
 do
 	ln -s ../../../../$d dgd/phantasmal/mud/usr
+done
+
+for d in git/phantasmal/testmud/lovecraft/mud/usr/*
+do
+	ln -s ../../../../../$d dgd/phantasmal/mud/usr
 done
 
 for d in git/phantasmal/mudlib/mud/include/*
@@ -47,15 +90,18 @@ do
 	ln -s ../../../../$d dgd/phantasmal/mud/include
 done
 
-cp git/phantasmal/mudlib/phantasmal.dgd dgd/phantasmal
-
-# lovecraft
-for d in git/phantasmal/testmud/lovecraft/mud/usr/*
-do
-	ln -s ../../../../$d dgd/phantasmal/mud/usr
-done
-
 for d in git/phantasmal/testmud/lovecraft/mud/include/*
 do
-	ln -s -f ../../../../$d dgd/phantasmal/mud/include
+	ln -s ../../../../../$d dgd/phantasmal/mud/include
 done
+
+for d in git/phantasmal/mudlib/mud/doc/*
+do
+	ln -s ../../../../$d dgd/phantasmal/mud/doc
+done
+
+echo "Copying configuration file..."
+
+cp git/phantasmal/mudlib/phantasmal.dgd dgd/phantasmal
+
+echo "Completed."
