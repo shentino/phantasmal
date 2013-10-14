@@ -69,7 +69,7 @@ foreach $test (@file_list) {
 		read_file($test);
 
 		unless ($read_error) {
-			$test =~ s/.base//;
+			$test =~ s/.base.html$/.html/;
 			
 			if ($test =~ m/\/index.html/) {
 				$read_title = $read_section;

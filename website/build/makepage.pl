@@ -4,7 +4,7 @@ use strict;
 
 my $filename = $ARGV[0];
 my $outfilename = $filename;
-$outfilename =~ s/.base.html/.html/;
+$outfilename =~ s/.base.html$/.html/;
 
 my $prefix = $ENV{"PREFIX"};
 @_ = split("/", $prefix);
