@@ -7,6 +7,7 @@
 
 #include <type.h>
 #include <limits.h>
+#include <status.h>
 
 inherit dtd DTD_UNQABLE;
 
@@ -60,7 +61,7 @@ void init_from_file(string file) {
   if(!SYSTEM())
     return;
 
-  if(strlen(file) > MAX_STRING_SIZE - 3)
+  if(strlen(file) > status(ST_STRSIZE) - 3)
     error("Zonefile is too large in ZONED->init_from_file!");
   from_unq_text(file);
 }

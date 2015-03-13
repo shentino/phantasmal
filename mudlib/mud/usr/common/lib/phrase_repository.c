@@ -4,6 +4,7 @@
 
 #include <limits.h>
 #include <type.h>
+#include <status.h>
 
 /********************* Loading phrases from files **********************/
 
@@ -69,10 +70,10 @@ mapping load_filemanaged_file(string path) {
   int     iter;
   object  phrase;
 
-  /* Even if MAX_STRING_SIZE is obsolete, this'll let us limit the size
+  /* Even if status(ST_STRSIZE) is obsolete, this'll let us limit the size
      of the file we read, which is a good thing. */
-  contents = read_file(path, 0, MAX_STRING_SIZE - 1);
-  if(strlen(contents) > MAX_STRING_SIZE - 3) {
+  contents = read_file(path, 0, status(ST_STRSIZE) - 1);
+  if(strlen(contents) > status(ST_STRSIZE) - 3) {
     /* File is too long... */
     LOGD->write_syslog("File " + path
 		       + " is too large to load as a phrase file!",

@@ -2,6 +2,7 @@
 #include <phantasmal/lpc_names.h>
 
 #include <limits.h>
+#include <status.h>
 
 private object dtd;
 private string dtd_text;
@@ -56,7 +57,7 @@ private void update_dtd_vars(void) {
     if(!buf) {
       error("Can't read DTD file " + dtd_filename + "!");
     }
-    if(strlen(buf) > MAX_STRING_SIZE - 3) {
+    if(strlen(buf) > status(ST_STRSIZE) - 3) {
       error("DTD file is too large in update_dtd_vars!");
     }
 
@@ -146,7 +147,7 @@ void load_from_file(string filename) {
   str = read_file(filename);
   if(!str)
     error("Can't read file '" + filename + "' in load_from_file!");
-  if(strlen(str) > MAX_STRING_SIZE - 3)
+  if(strlen(str) > status(ST_STRSIZE) - 3)
     error("File '" + filename + "' is too large in load_from_file!");
 
   unq = UNQ_PARSER->basic_unq_parse(str);

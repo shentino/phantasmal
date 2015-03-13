@@ -4,12 +4,13 @@
 #include <limits.h>
 #include <type.h>
 #include <trace.h>
+#include <status.h>
 
 string parser;
 
 static void create(varargs int clone) {
-  parser = read_file("/usr/common/obj/unq_parser.dpd", 0, MAX_STRING_SIZE - 1);
-  if(strlen(parser) > MAX_STRING_SIZE - 3) {
+  parser = read_file("/usr/common/obj/unq_parser.dpd", 0, status(ST_STRSIZE) - 1);
+  if(strlen(parser) > status(ST_STRSIZE) - 3) {
     error("Parser description too big loading file in unq_parser::create!");
   }
 }

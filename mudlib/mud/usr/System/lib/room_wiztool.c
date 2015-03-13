@@ -44,7 +44,7 @@ static string read_entire_file(string file) {
 
   ret = read_file(file);
   if (ret == nil) { return nil; }
-  if(strlen(ret) > MAX_STRING_SIZE - 3) {
+  if(strlen(ret) > status(ST_STRSIZE) - 3) {
     error("File '" + file + "' is too large!");
   }
 
@@ -326,7 +326,7 @@ static void cmd_load_rooms(object user, string cmd, string str) {
     user->message("Error reading room file, or file is empty.\n");
     return;
   }
-  if(strlen(room_file) > MAX_STRING_SIZE - 3) {
+  if(strlen(room_file) > status(ST_STRSIZE) - 3) {
     user->message("Room file is too big!  "
 		  + "See Angelbob to increase current limit.");
     return;

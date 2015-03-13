@@ -212,7 +212,7 @@ void new_help_file(string path) {
   if(GAME() || COMMON() || SYSTEM()) {
 
     contents = read_file(path);
-    if(strlen(contents) > MAX_STRING_SIZE - 3) {
+    if(strlen(contents) > status(ST_STRSIZE) - 3) {
       error("Helpfile " + path + " too long!");
     }
 
