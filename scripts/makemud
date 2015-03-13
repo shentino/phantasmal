@@ -82,7 +82,7 @@ done
 
 for d in git/phantasmal/testmud/lovecraft/mud/usr/*
 do
-	ln -s ../../../../../$d dgd/phantasmal/mud/usr
+	ln -s ../../../../$d dgd/phantasmal/mud/usr
 done
 
 for d in git/phantasmal/mudlib/mud/include/*
@@ -92,7 +92,7 @@ done
 
 for d in git/phantasmal/testmud/lovecraft/mud/include/*
 do
-	ln -s ../../../../../$d dgd/phantasmal/mud/include
+	ln -s ../../../../$d dgd/phantasmal/mud/include
 done
 
 for d in git/phantasmal/mudlib/mud/doc/*
