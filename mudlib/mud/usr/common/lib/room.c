@@ -35,7 +35,7 @@ private int objflags;
 /* These numbers will be used to determine what a player can carry,
    and what objects can fit into what other objects.  Weight is
    in units of kilograms, and volume is in cubic decimeters
-   (note 1 cu meter is 1000 sq decimeters).  Length represents the
+   (note 1 cu meter is 1000 cu decimeters).  Length represents the
    greatest extent of the longest axis, and is in units of
    centimeters.  The capacities are the largest values that are
    acceptable for objects put into this object.  Weight and
