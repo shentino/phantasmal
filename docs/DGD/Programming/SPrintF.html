@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+
+  <title>The Phantasmal MUDlib for DGD: sprintf in DGD
+</title>
+  <link href="../../css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header_pane">
+    <p>Phantasmal MUD Lib for DGD</p>
+
+  </div>
+
+  <div class="banner_pane">
+    <table class="banner">
+  <tr>
+    <td class="banner" align="center">
+      <a href="http://validator.w3.org/check/referer"><img src=
+      "http://www.w3.org/Icons/valid-xhtml10" alt=
+      "Valid XHTML 1.0 Strict!" style=
+      "border: 0; width: 88px; height: 31px;"/></a> <a href=
+      "http://jigsaw.w3.org/css-validator/check/referer"><img src=
+      "http://jigsaw.w3.org/css-validator/images/vcss" alt=
+      "Valid CSS!" style=
+      "border: 0; width: 88px; height: 31px;"></a> <a href=
+      "http://sourceforge.net"/></a><img src=
+      "http://sourceforge.net/sflogo.php?group_id=48659&amp;type=2"
+      style="border: 0; width: 125px; height: 37px;" alt=
+      "SourceForge.net Logo"/>
+    </td>
+  </tr>
+</table>
+
+  </div>
+
+  <table>
+    <tr>
+      <td valign="top" class="index_pane">
+        <ul>
+<li><a href="../../index.html">Phantasmal Site</a></li>
+<ul>
+<li><a href="../../History.html">History</a></li>
+<li><a href="../../Installing.html">Installing Baseline Phantasmal</a></li>
+<li><a href="../../Comparison.html">Comparison to Other Libs</a></li>
+<li><a href="../../Credits.html">Credits</a></li>
+<li><a href="../../Current.html">Current Features</a></li>
+<li><a href="../../WhatIsPhantasmal.html">About</a></li>
+<li><a href="../../API/index.html">Phantasmal API</a></li>
+<li><a href="../../Archive/index.html">Archive</a></li>
+<li><a href="../index.html">DGD</a></li>
+<ul>
+<li><a href="../Manual/index.html">DGD Reference Manual</a></li>
+<li><a href="../CSharp_vs_DGD.html">CSharp vs DGD</a></li>
+<li><a href="../Contribute.html">Contributing to DGD</a></li>
+<li><a href="../DGD_Terms.html">DGD Glossary</a></li>
+<li><a href="../Java_vs_DGD.html">Java vs DGD</a></li>
+<li><a href="../MUDs_using_DGD.html">DGD MUDs</a></li>
+<li><a href="../Misc_DGD.html">Miscellaneous DGD</a></li>
+<li><a href="../MudOS_vs_DGD.html">MudOS vs DGD</a></li>
+<li><a href="../SlushBucket.html">Slush Bucket</a></li>
+<li><a href="../Why_DGD.html">Why Use DGD?</a></li>
+<li><a href="../Book/index.html">DGD Reference Manual (legacy)</a></li>
+<li><a href="../Config/index.html">Getting DGD</a></li>
+<li><a href="../GameDesign/index.html">Game Design Issues</a></li>
+<li><a href="../Kernel/index.html">The Kernel Library</a></li>
+<li><a href="../LPC/index.html">Untitled document (LPC/index.base.html)</a></li>
+<li><a href="../LibWriting/index.html">Writing a Library</a></li>
+<li><a href="../Operation/index.html">What Does It Do?</a></li>
+<li><a href="index.html">DGD LPC Reference</a></li>
+<ul>
+<li><a href="AbstractFuncs.html">DGD/MP and Threads</a></li>
+<li><a href="Arrays.html">Mappings</a></li>
+<li><a href="AtomicFuncs.html">Atomic Functions</a></li>
+<li><a href="CallOut.html">call_out</a></li>
+<li><a href="CallTouch.html">call_touch()</a></li>
+<li><a href="CallTrace.html">call_trace()</a></li>
+<li><a href="Calling_Conventions.html">DGD Calling Conventions</a></li>
+<li><a href="CharManip.html">Character Manipulation</a></li>
+<li><a href="Code_Examples.html">LPC Code Samples</a></li>
+<li><a href="CreateFuncs.html">Create Funcs</a></li>
+<li><a href="Diffs_in_LPC.html">DGD LPC Diffs</a></li>
+<li><a href="Driver_Details.html">DGD Driver Details</a></li>
+<li><a href="General_Docs.html">non-DGD Docs</a></li>
+<li><a href="LPC_FAQ.html">LPC FAQ</a></li>
+<li><a href="LinkedLists.html">Linked Lists</a></li>
+<li><a href="MPThreads.html">DGD/MP and Threads</a></li>
+<li><a href="Mappings.html">Mappings</a></li>
+<li><a href="Object_Types.html">DGD Object Subtypes</a></li>
+<li><a href="Parse_String.html">Using parse_string</a></li>
+<li>sprintf in DGD</li>
+<li><a href="SScanF.html">sscanf in DGD</a></li>
+<li><a href="ThreadLocal.html">Thread-Local Storage</a></li>
+<li><a href="Unsupported.html">Unsupported Features</a></li>
+</ul>
+<li><a href="../Running/index.html">Running a MUD</a></li>
+<li><a href="../Skotos/index.html">Skotos</a></li>
+</ul>
+<li><a href="../../Design/index.html">Design</a></li>
+<li><a href="../../Development/index.html">Development</a></li>
+<li><a href="../../Innsmouth/index.html">Innsmouth MUD</a></li>
+<li><a href="../../Operation/index.html">Phantasmal Operation</a></li>
+<li><a href="../../Setup/index.html">Setup</a></li>
+<li><a href="../../Test/index.html">Test module index</a></li>
+<li><a href="../../Tutorial/index.html">Phantasmal Tutorials</a></li>
+</ul>
+</ul>
+
+      </td>
+      <td valign="top" class="content_pane">
+        <p><a href="index.html">Phantasmal Site</a> > <a href="index.html">DGD</a> > <a href="index.html">DGD LPC Reference</a> > sprintf in DGD</p>
+
+
+
+<h2>Implementing the sprintf() Function in DGD</h2>
+<pre>
+From: dgd at list.imaginary.com (Erwin Harte)
+Date: Thu Apr  1 14:35:02 2004
+Subject: [DGD] Re: sprintf
+
+On Wed, Mar 31, 2004 at 10:47:13PM +0000, Robert Forshaw wrote:
+&gt; Hi,
+&gt; 
+&gt; has anyone here written an sprintf or similar function for DGD (since it 
+&gt; doesn't have one built in) ? If so, would they care to share it?
+
+This was written about 9 years ago by Abigail.  It's written in LPC so
+I don't expect major problems getting it to work on a recent DGD
+version:
+
+    ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/sprintf-1.3.tgz
+
+Cheers,
+
+Erwin.
+-- 
+Erwin Harte
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Michael McKiel)
+Date: Thu Apr  1 14:37:01 2004
+Subject: [DGD] sprintf
+
+ --- Robert Forshaw wrote: &gt; Hi,
+&gt; 
+&gt; has anyone here written an sprintf or similar function for DGD (since it 
+&gt; doesn't have one built in) ? If so, would they care to share it?
+&gt; 
+
+I believe theres one here:
+http://www.ucc.gu.uwa.edu.au/~john/dgd/
+
+As well phantasmal's DGD/external has the same sprintf.tar.gz file.
+
+If I recall all I removed from it to make it work was the:
+    inherit "/kernel/lib/strings";
+
+But we soon after removed sprintf since I found almost all I was using it for
+could be accomplished with the following code, and didn't see a point in
+inheriting 600 lines of sprintf into every single object for almost nothing.
+
+The define is 80 spaces in quotes.
+
+#define SPACE80 "                                                            
+                   "
+
+/* Name: align()
+ * Desc: similiar to Dworkin's ralign() in the wiztool.
+ *       A negative width causes left justify up to -79.    */
+nomask string align (mixed num, int width)
+{
+    string str;
+
+    if ( width &gt; 80 || width &lt; -79 ) return "ILLEGAL Width";
+
+    if ( width &gt;= 0 )
+    {
+        str = SPACE80 + (string) num;
+        return str[strlen(str) - width ..];
+    }
+    else
+    {
+        str = (string) num + SPACE80;
+        return str[0 .. ( 0 - width -1) ];
+    }
+}
+
+
+Zam.
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Erwin Harte)
+Date: Thu Apr  1 15:28:00 2004
+Subject: [DGD] Re: sprintf
+
+On Thu, Apr 01, 2004 at 04:14:16PM -0500, Michael McKiel wrote:
+[...]
+&gt; I think (though I may be in the minority) that one of DGD's few downfalls is
+&gt; the lack of understanding in how to go about doing a driver extension. In
+&gt; other LPC sources it wouldn't seem to be as much of an undertaking. It would
+&gt; seem that if there was a greater comprehension there, you'd find more binary
+&gt; option/"addons" than just lpc-code thats frequently LIB dependant.
+
+While the downside of linking in a sprintf() from an outside source is
+that you may get different behaviour depending on what platform you're
+compiling your driver on with as effect that the mudlib may work on
+your main server but may misbehave on a test-copy elsewhere.
+
+Additionally you get all the potential buffer overflows and such for
+free while ignoring DGD's sturdy built-in string type.
+
+I'll agree that aside from some samples I haven't seen many people use
+DGD's extension interface.  You are aware of its existence, I assume?
+
+&gt;     Beyond that, just that a few of its great features, like LWO's and
+&gt; parse_string dont get utilized in the KernelLib so one has to start from
+&gt; scratch at getting an understanding of those.
+
+True.  On the other hand you're welcome to ask questions and over time
+I've seen several examples float by, including a (now slightly
+outdated) grammar for LPC itself, from Dworkin. :)
+
+Cheers,
+
+Erwin.
+-- 
+Erwin Harte
+</pre>
+
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer_pane">
+    <p>Copyright (C) 2010 Raymond Jennings</p>
+<p>This website is released to the public under the terms of the
+GNU Free Documentation License, Version 1.3 or later</p>
+
+  </div>
+</body>
+</html>

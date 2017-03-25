@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+
+  <title>The Phantasmal MUDlib for DGD: call_out
+</title>
+  <link href="../../css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header_pane">
+    <p>Phantasmal MUD Lib for DGD</p>
+
+  </div>
+
+  <div class="banner_pane">
+    <table class="banner">
+  <tr>
+    <td class="banner" align="center">
+      <a href="http://validator.w3.org/check/referer"><img src=
+      "http://www.w3.org/Icons/valid-xhtml10" alt=
+      "Valid XHTML 1.0 Strict!" style=
+      "border: 0; width: 88px; height: 31px;"/></a> <a href=
+      "http://jigsaw.w3.org/css-validator/check/referer"><img src=
+      "http://jigsaw.w3.org/css-validator/images/vcss" alt=
+      "Valid CSS!" style=
+      "border: 0; width: 88px; height: 31px;"></a> <a href=
+      "http://sourceforge.net"/></a><img src=
+      "http://sourceforge.net/sflogo.php?group_id=48659&amp;type=2"
+      style="border: 0; width: 125px; height: 37px;" alt=
+      "SourceForge.net Logo"/>
+    </td>
+  </tr>
+</table>
+
+  </div>
+
+  <table>
+    <tr>
+      <td valign="top" class="index_pane">
+        <ul>
+<li><a href="../../index.html">Phantasmal Site</a></li>
+<ul>
+<li><a href="../../History.html">History</a></li>
+<li><a href="../../Installing.html">Installing Baseline Phantasmal</a></li>
+<li><a href="../../Comparison.html">Comparison to Other Libs</a></li>
+<li><a href="../../Credits.html">Credits</a></li>
+<li><a href="../../Current.html">Current Features</a></li>
+<li><a href="../../WhatIsPhantasmal.html">About</a></li>
+<li><a href="../../API/index.html">Phantasmal API</a></li>
+<li><a href="../../Archive/index.html">Archive</a></li>
+<li><a href="../index.html">DGD</a></li>
+<ul>
+<li><a href="../Manual/index.html">DGD Reference Manual</a></li>
+<li><a href="../CSharp_vs_DGD.html">CSharp vs DGD</a></li>
+<li><a href="../Contribute.html">Contributing to DGD</a></li>
+<li><a href="../DGD_Terms.html">DGD Glossary</a></li>
+<li><a href="../Java_vs_DGD.html">Java vs DGD</a></li>
+<li><a href="../MUDs_using_DGD.html">DGD MUDs</a></li>
+<li><a href="../Misc_DGD.html">Miscellaneous DGD</a></li>
+<li><a href="../MudOS_vs_DGD.html">MudOS vs DGD</a></li>
+<li><a href="../SlushBucket.html">Slush Bucket</a></li>
+<li><a href="../Why_DGD.html">Why Use DGD?</a></li>
+<li><a href="../Book/index.html">DGD Reference Manual (legacy)</a></li>
+<li><a href="../Config/index.html">Getting DGD</a></li>
+<li><a href="../GameDesign/index.html">Game Design Issues</a></li>
+<li><a href="../Kernel/index.html">The Kernel Library</a></li>
+<li><a href="../LPC/index.html">Untitled document (LPC/index.base.html)</a></li>
+<li><a href="../LibWriting/index.html">Writing a Library</a></li>
+<li><a href="../Operation/index.html">What Does It Do?</a></li>
+<li><a href="index.html">DGD LPC Reference</a></li>
+<ul>
+<li><a href="AbstractFuncs.html">DGD/MP and Threads</a></li>
+<li><a href="Arrays.html">Mappings</a></li>
+<li><a href="AtomicFuncs.html">Atomic Functions</a></li>
+<li>call_out</li>
+<li><a href="CallTouch.html">call_touch()</a></li>
+<li><a href="CallTrace.html">call_trace()</a></li>
+<li><a href="Calling_Conventions.html">DGD Calling Conventions</a></li>
+<li><a href="CharManip.html">Character Manipulation</a></li>
+<li><a href="Code_Examples.html">LPC Code Samples</a></li>
+<li><a href="CreateFuncs.html">Create Funcs</a></li>
+<li><a href="Diffs_in_LPC.html">DGD LPC Diffs</a></li>
+<li><a href="Driver_Details.html">DGD Driver Details</a></li>
+<li><a href="General_Docs.html">non-DGD Docs</a></li>
+<li><a href="LPC_FAQ.html">LPC FAQ</a></li>
+<li><a href="LinkedLists.html">Linked Lists</a></li>
+<li><a href="MPThreads.html">DGD/MP and Threads</a></li>
+<li><a href="Mappings.html">Mappings</a></li>
+<li><a href="Object_Types.html">DGD Object Subtypes</a></li>
+<li><a href="Parse_String.html">Using parse_string</a></li>
+<li><a href="SPrintF.html">sprintf in DGD</a></li>
+<li><a href="SScanF.html">sscanf in DGD</a></li>
+<li><a href="ThreadLocal.html">Thread-Local Storage</a></li>
+<li><a href="Unsupported.html">Unsupported Features</a></li>
+</ul>
+<li><a href="../Running/index.html">Running a MUD</a></li>
+<li><a href="../Skotos/index.html">Skotos</a></li>
+</ul>
+<li><a href="../../Design/index.html">Design</a></li>
+<li><a href="../../Development/index.html">Development</a></li>
+<li><a href="../../Innsmouth/index.html">Innsmouth MUD</a></li>
+<li><a href="../../Operation/index.html">Phantasmal Operation</a></li>
+<li><a href="../../Setup/index.html">Setup</a></li>
+<li><a href="../../Test/index.html">Test module index</a></li>
+<li><a href="../../Tutorial/index.html">Phantasmal Tutorials</a></li>
+</ul>
+</ul>
+
+      </td>
+      <td valign="top" class="content_pane">
+        <p><a href="index.html">Phantasmal Site</a> > <a href="index.html">DGD</a> > <a href="index.html">DGD LPC Reference</a> > call_out</p>
+
+
+
+<h2>Using call_out()</h2>
+<pre>
+From: dgd at list.imaginary.com (Felix A. Croes)
+Date: Fri Feb 21 21:47:01 2003
+Subject: [DGD] call_out delay
+
+Jay Shaffstall wrote:
+
+&gt; I'm using call_out with a delay to trigger events in my mud that need to 
+&gt; happen at specific intervals.  The call_out docs say, "If the delay is an 
+&gt; integer, the function will be called after approximately the specified 
+&gt; number of seconds".
+
+DGD handles timing for integer-delay callouts using the POSIX time.
+That means that a one-second callout started at time T will be executed
+(the rest of the MUD allowing) when the time turns into T+1, measured
+in POSIX seconds since 1970.  So the actual delay can be between 0 and 1
+seconds, and that's ignoring delays due to other callouts trying to
+run at that same moment.
+
+For callouts with a floating point delay, more care is taken that they
+run precisely at the intended moment.  A 1.0 delay callout started at
+T + 0.23 will be executed at T + 1.23.
+
+
+&gt; How approximate is approximate?  On my Windows PC, things seem to work as 
+&gt; I'd expect.  One of my builders is using a Linux laptop, and has seen the 
+&gt; delays decrease until events are being fired continually (the actual value 
+&gt; being passed in for the delay hasn't changed).  However on his Linux PC, it 
+&gt; seems to work fine.
+
+This may legitimately (appear to) happen if each one second callout takes
+.95 seconds to process.  Perhaps the laptop is fairly old, and a lot
+slower than the desktop machine?  Otherwise, this may be a bug in DGD
+which I would like to learn more about.
+
+Regards,
+Dworkin
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Erwin Harte)
+Date: Sat Mar 15 19:30:02 2003
+Subject: [DGD] Skills
+
+On Sat, Mar 15, 2003 at 08:25:44PM -0500, Ben Chambers wrote:
+&gt; If you put a call_out with a time of 0, will it be executed during this loop
+&gt; of execution or during the next loop of execution?
+
+As soon as possible after the current thread ends.  Having it execute
+_during_ this loop of execution (thread) would make it a call_other()
+effectively, which wouldn't be very useful.
+
+The only thing that could cause the 0-call_out not to be execute
+right after the current thread is if there are other 0-callouts
+waiting to be executed.
+
+Hope that helps,
+
+Erwin.
+-- 
+Erwin Harte
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Erwin Harte)
+Date: Tue Nov  6 10:59:01 2001
+Subject: [DGD] call_outs to destructed objects
+
+On Tue, Nov 06, 2001 at 04:07:31PM +0000, Soja wrote:
+&gt; 
+&gt; Hi !
+&gt; I wonder if it is a good thing to remove all call_outs you know are 
+&gt; directed to a specific object, before you destruct the object?
+&gt; Or is it taken care of by the dest function?  Or is it just not necessary,
+&gt; as the call_out will die by itself when it has nothing to call?
+
+All call_out()s started in object A are removed from the system
+automatically when object A is destroyed.
+
+Erwin.
+-- 
+Erwin Harte
+</pre>
+<hr>
+<pre>
+From: dgd@dworkin.nl (Felix A. Croes)
+Date: Tue Apr  5 19:12:02 2005
+Subject: [DGD] call_outs
+
+Steve Wooster wrote:
+
+&gt;      Yet another question occurred to me... I've heard that if you do a 
+&gt; call_out for 3 seconds, and one for 5, the 3 second call_out is guaranteed 
+&gt; to execute before the 5 second one... What about if you do a 5 second 
+&gt; call_out, and a bunch of chained 0-second call_outs... Is there any 
+&gt; guarantee that the 5 second call_out will be executed after the last 0 
+&gt; second one? (or is it only guaranteed to execute after the first 0 second 
+&gt; call_out?) Thanks!
+
+The 5 second callout might execute after the first zero second callout
+and before the second one.
+
+If you want to be certain that the chain of zero second callouts comes
+first, start the 5 second callout from the last one.
+
+Regards,
+Dworkin
+</pre>
+
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer_pane">
+    <p>Copyright (C) 2010 Raymond Jennings</p>
+<p>This website is released to the public under the terms of the
+GNU Free Documentation License, Version 1.3 or later</p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+
+  <title>The Phantasmal MUDlib for DGD: Skotos Library
+</title>
+  <link href="../../css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header_pane">
+    <p>Phantasmal MUD Lib for DGD</p>
+
+  </div>
+
+  <div class="banner_pane">
+    <table class="banner">
+  <tr>
+    <td class="banner" align="center">
+      <a href="http://validator.w3.org/check/referer"><img src=
+      "http://www.w3.org/Icons/valid-xhtml10" alt=
+      "Valid XHTML 1.0 Strict!" style=
+      "border: 0; width: 88px; height: 31px;"/></a> <a href=
+      "http://jigsaw.w3.org/css-validator/check/referer"><img src=
+      "http://jigsaw.w3.org/css-validator/images/vcss" alt=
+      "Valid CSS!" style=
+      "border: 0; width: 88px; height: 31px;"></a> <a href=
+      "http://sourceforge.net"/></a><img src=
+      "http://sourceforge.net/sflogo.php?group_id=48659&amp;type=2"
+      style="border: 0; width: 125px; height: 37px;" alt=
+      "SourceForge.net Logo"/>
+    </td>
+  </tr>
+</table>
+
+  </div>
+
+  <table>
+    <tr>
+      <td valign="top" class="index_pane">
+        <ul>
+<li><a href="../../index.html">Phantasmal Site</a></li>
+<ul>
+<li><a href="../../History.html">History</a></li>
+<li><a href="../../Installing.html">Installing Baseline Phantasmal</a></li>
+<li><a href="../../Comparison.html">Comparison to Other Libs</a></li>
+<li><a href="../../Credits.html">Credits</a></li>
+<li><a href="../../Current.html">Current Features</a></li>
+<li><a href="../../WhatIsPhantasmal.html">About</a></li>
+<li><a href="../../API/index.html">Phantasmal API</a></li>
+<li><a href="../../Archive/index.html">Archive</a></li>
+<li><a href="../index.html">DGD</a></li>
+<ul>
+<li><a href="../Manual/index.html">DGD Reference Manual</a></li>
+<li><a href="../CSharp_vs_DGD.html">CSharp vs DGD</a></li>
+<li><a href="../Contribute.html">Contributing to DGD</a></li>
+<li><a href="../DGD_Terms.html">DGD Glossary</a></li>
+<li><a href="../Java_vs_DGD.html">Java vs DGD</a></li>
+<li><a href="../MUDs_using_DGD.html">DGD MUDs</a></li>
+<li><a href="../Misc_DGD.html">Miscellaneous DGD</a></li>
+<li><a href="../MudOS_vs_DGD.html">MudOS vs DGD</a></li>
+<li><a href="../SlushBucket.html">Slush Bucket</a></li>
+<li><a href="../Why_DGD.html">Why Use DGD?</a></li>
+<li><a href="../Book/index.html">DGD Reference Manual (legacy)</a></li>
+<li><a href="../Config/index.html">Getting DGD</a></li>
+<li><a href="../GameDesign/index.html">Game Design Issues</a></li>
+<li><a href="../Kernel/index.html">The Kernel Library</a></li>
+<li><a href="../LPC/index.html">Untitled document (LPC/index.base.html)</a></li>
+<li><a href="../LibWriting/index.html">Writing a Library</a></li>
+<li><a href="../Operation/index.html">What Does It Do?</a></li>
+<li><a href="../Programming/index.html">DGD LPC Reference</a></li>
+<li><a href="../Running/index.html">Running a MUD</a></li>
+<li><a href="index.html">Skotos</a></li>
+<ul>
+<li><a href="CommercialUse.html">Commercial Use</a></li>
+<li><a href="Intro_to_SAM.html">Introduction to SAM: Skotos Active Markup</a></li>
+<li><a href="SAM_Quick_Summary.html">Quick SAM Summary</a></li>
+<li><a href="Skotos2.html">Skotos 2.0 Library</a></li>
+<li>Skotos Library</li>
+</ul>
+</ul>
+<li><a href="../../Design/index.html">Design</a></li>
+<li><a href="../../Development/index.html">Development</a></li>
+<li><a href="../../Innsmouth/index.html">Innsmouth MUD</a></li>
+<li><a href="../../Operation/index.html">Phantasmal Operation</a></li>
+<li><a href="../../Setup/index.html">Setup</a></li>
+<li><a href="../../Test/index.html">Test module index</a></li>
+<li><a href="../../Tutorial/index.html">Phantasmal Tutorials</a></li>
+</ul>
+</ul>
+
+      </td>
+      <td valign="top" class="content_pane">
+        <p><a href="index.html">Phantasmal Site</a> > <a href="index.html">DGD</a> > <a href="index.html">Skotos</a> > Skotos Library</p>
+
+
+
+<h2>What is Known About the Skotos Libraries?</h2>
+
+<p>Skotos' current libraries are closed-source. However, some
+information has been released by the company about them. You can
+find some of the information in the <a href=
+"http://www.skotos.net">Skotos articles</a>, especially Shannon
+Appelcline's "Trials, Triumphs and Trivialities".</p>
+
+<p>The Skotos library includes a web interface for administration
+and creation. The basic library includes everything one might need
+for the base of a next-generation mud. This includes true <a href=
+"../LibWriting/Persistence.html">persistence</a>, and a more
+extensive social expression mechanism than even MUSHes contain. The
+base Skotos library does <i>not</i> have game-specific systems like
+combat, though. Those are built individually, per-game.</p>
+
+<p>There is also XML object import and export. You can see examples
+of an <a href="../external/skotos_anvil.txt">anvil</a> and a
+<a href="../external/skotos_rose.txt">rose</a> rendered as XML from
+their Skotos LPC objects.</p>
+
+<p>Skotos has provided an <a href="Intro_to_SAM.html">introduction
+to their Skotos Active Markup syntax</a>. There's also a <a href=
+"SAM_Quick_Summary.html">quick summary of all the tags</a> for
+their markup.</p>
+<hr>
+<pre>
+From: Par Winzell
+Date: Thu, 22 Jul 1999 14:19:11 -0700 (PDT)
+To: DGD Mailing List
+Subject: Re: [DGD]Melville Mudlib
+
+In response to Dworkin's recent stirring posting about the interesting
+times ahead and a new generation of mudlibs, here's an outline of some
+of the constituent parts of the lib we're writing at Skotos, including
+discussion and motivation.
+
+By far the most influential factor on design has been persistence; the
+idea of a state space that is cold-booted only once and then stays up,
+potentially forever. Core support for this has been in DGD for a long
+time; much of Dworkin's kernel library is designed with these demands
+in mind, and people have been -talking- about peristent Muds for a long
+time. So why aren't there any yet?
+
+Well, it's damn hard. One of the basic problems, a recent topic on this
+list, is program upgrading which requires LPC support in the form of a
+object-database. More generally, the necessity of basic consistency is
+upped brutally. If after a year of precious uptime you find some vital
+datastructure to be corrupted, you're going to be very sad. When this
+happens to the mudlib you wrote, you'll be glad you based it around the
+kernel lib -- which still runs, and lets you do an emergency login and
+poke at the guts of your broken world.
+
+So we use the kernel library, unmodified. Easy decision to make.
+
+Incidentally, the -game- effects of persistency are of course enormous.
+That's another discussion entirely.
+
+The ~System level is small. It has three major components -- the object
+database; a second-level auto object which adds some protection against
+destructing clonable objects that have clones; and some API translation
+to the rest of the lib of kernel services which only ~System is allowed
+to directly access.
+
+The guts are in ~SkotOS. This means they get the benefit of the ~System
+level restrictions and clone book-keeping. Here we have,
+
+ * HTTP service. Text is great, but a browser interface can be used to
+great advantage, especially for administration and development. This is
+especially true in a persistent game, where manipulating state in one
+way or another is much more important than in a rebooting Mud, where it
+is the LPC (and save_object) files that really determine what the world
+is. We're flirting with HTTP 1.1 compliance.
+
+ * Standardized functionality for the export and import of object state
+through XML. To use this system, the object describes its function-call
+interface for query() and set() style operations. With this description
+we are able not only to fetch the object state and transcribe it to XML
+but also to generate for it a true DTD (Document Type Definition). With
+the help of this DTD, which describes precisely the possible structures
+of the state, external XML authoring software will be able to construct
+word-processor quality GUI's for any object that uses the system.
+
+ * An XML parser (and generator) which uses parse_string(). XML is just
+a data storage format, so just parsing it does little. The data may be
+object state as per above, destined to be squeezed back into an object
+somewhere. In addition to this static structure, however, we use XML to
+do an active mark-up of text fields. In SGML/XML terms this is "PCDATA".
+   - In-game descriptions may be marked up to vary depending on server
+state; for example, a room description may vary by light level relative
+to the looker's night-vision stat, or variables associated with players
+or rooms or other objects may be embedded in the text.
+   - We also generate HTML from the XML, and thus automatically have a
+powerful system for server-side generation of dynamic HTML. We'll ship
+the lib with a set of such XML-HTML pages.
+
+ * A decent command parser which should understand a sensible subset of
+English. We have chosen to completely forbid guess-the-verb puzzles, by
+centralizing the parser entirely. If a verb does something anywhere, it
+does something everywhere. Successful commands are turned into actions
+or sequences of actions taken by objects in the virtual world. We tried
+for as much separation between client-interface and world as possible.
+These sequences of actions could equally well be generated by clicking
+on things in some isometric graphical client. While we try to keep that
+door open, we're concentrating on text as the primary interface; though
+we expect ambitious developers to allow for e.g. stat-showing graphical
+client-side panes, scrolling (and clickable) maps, and more.
+
+ * A pretty intricate system for expressive/emotive stuff; while there
+is no emote-command, the social verbs are plentiful and come with lots
+of adverbs. That's nothing new; the interesting stuff are stances and
+poses, which are tied into the world simulation to a higher degree than
+I have seen elsewhere. I am able to e.g. kneel before an altar in quiet
+repose, or lie on a table, or stand next to Dworkin in a room with more
+effect than a transient statement of fact -- these ways in which things
+can relate to each other is used in describing the environment. Certain
+socials break certain stances and poses.
+
+ * There's the idea of a prox -- something one can be in the proximity
+of. Dropped gear will be lying 'near Zell' instead of in the usual big
+collective heap. If I walk away from my battle-axe, it simply lies on
+the floor. One of the things we hope to do is to kill off this ancient
+truth that LPMuds aren't very good for social Mudders.
+
+
+Phew. Then, finally, there is the virtual world itself. We separate the
+world objects from things like command parsing and text generation much
+more than does e.g. 2.4.5; this helps the world state to be independent
+of client interface, as discussed above. We just took a step further in
+this direction and utterly slew the time-honoured sub-classing approach
+to physical objects. There is now only the ur-thing, and it can be room
+or sword or bag of gold -- or all three -- depending only on its state.
+Thus everything is really a clone of /base/obj/thing, everything can be
+eaten (possibly with great discomfort) or used as a weapon (possibly a
+very bad weapon). Of couse, that effect is equally possible to achieve
+with traditional sub-classing. The difference is again the trend toward
+the data-driven, which seems to happen naturally around persistence.
+
+
+It should not be difficult to tell that the early part of this document
+details things that are pretty much settled, while the mutations of the
+/base directory are recent and somewhat shocking.
+
+So. When will all this be available to play with? I'm unsure. October?
+
+Comments requested!
+
+
+Zell
+</pre>
+<hr>
+<pre>
+From: "Christopher Allen"
+To: DGD Mailing List
+Subject: RE: [DGD]Patches
+Date: Tue, 11 Apr 2000 15:27:07 -0700
+
+The line of demarcation is becoming more specific as we do some architectural
+partitioning out of SkotOS -- we have a number of layers above the kernel
+library:
+
+ -------------------------------------------------------------
+/                          Game                               \
+\                          World                              /
+ -------------------------------------------------------------
+/                          Game                               \
+\                     Specific Mechanics                      /
+ =============================================================
+ -------------------------------------   ---------------------
+/                WorldLib             \ /       IFLib         \
+|   inventory            stance pose   |                      |
+|  proximity  details  faces  desc     |   socials     verbs  |
+\    exits  gender  volition  physics / \   adverbs  errors   /
+ --- - - - - - - - - - - - - - - - --- \ \ -- - - - - - - - --
+/                 DevLib                \ /   ToolLib         \
+|     Services             Interpreters  |                    |
+|                                        |    sam  |   dtd    |
+|  sid  | devd  ||  state | forms | sami |  xmlgen | xmlparse |
+\  logd | helpd ||        |       |     / \                   /
+ -------------------------------------------------------------
+/                                                             \
+|                               System                        |
+|                               Library                       |
+|        Object Services          ||      Net Services        |
+|                                 ||                          |
+|  initd | idd | progdbd |syslogd || nptd | httpd | devuserd@ |
+\        |     |         |        ||      |       |           /
+ -------------------------------------------------------------
+/                                                             \
+|                               Kernel                        |
+|                               Library                       |
+|                                                             |
+|    security  ownership  resources  thread-local  logon      |
+\                                       storage               /
+ -------------------------------------------------------------
+/                                                             \
+|                                D G D 				|
+|                                                             |
+|  LPC Compiler  |  Run-Time  |  Database  |  I/O  |  Parser  |
+\                |            |            |       |          /
+ -------------------------------------------------------------
+
+It is the game world and game specific mechanics (such as the specifics of
+combat) that is the property of the developer using our libraries.
+
+
+------------------------------------------------------------------------
+. Christopher Allen                                 Skotos Tech Inc. ..
+.                           1512 Walnut St., Berkeley, CA 94709-1513 ..
+. &lt;http://www.Skotos.net&gt;               o510/649-4030  f510/649-4034 ..
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Christopher Allen)
+Date: Sun Feb  2 12:38:06 2003
+Subject: Re[2]: [DGD] Impressed with DGD
+
+"Christopher Darque":
+&gt; If this game I am
+&gt; considering is proposed, and accepted, at Skotos then this
+&gt; might be a real possibility.
+
+If you are considering a game for us, either using your own library (as
+WAP does with Grendel's Revenge and TEC) or Skotos' own library (which
+is used by Castle Marrach), then you'll have access to our clients
+(ActiveX, Java, and Mozilla Javascript) which all use HTML font tags for
+color inside the text window.
+
+You can specify any color you want using hex codes, but the following
+are the default named ones:
+
+{ "black",    0x000000 },
+{ "white",    0xffffff },
+{ "green",    0x00ff00 },
+{ "maroon",   0x800000 },
+{ "olive",    0x008000 },
+{ "navy",     0x000080 },
+{ "purple",   0x800080 },
+{ "gray",     0x808080 },
+{ "red",      0xff0000 },
+{ "yellow",   0xffff00 },
+{ "blue",     0x0000ff },
+{ "teal",     0x008080 },
+{ "lime",     0x808000 },
+{ "aqua",     0x00ffff },
+{ "fuchsia",  0xff00ff },
+{ "silver",   0xc0c0c0 },
+
+In addition, the Alice ActiveX client supports some (but not all) of the
+Pueblo commands:
+
+        &lt;br/&gt;COMPLETELY FUNCTIONAL MARKUP
+        &lt;xch_page clear=text /&gt;
+        &lt;body bgcolor=silver text=black alink=red vlink=red link=red /&gt;
+        &lt;hr/&gt;
+        &lt;br/&gt;Testing xch_page clear=text Tag.
+        &lt;br/&gt;Testing body Tag.
+        &lt;br/&gt;Testing Header Rule.
+        &lt;br/&gt;Testing img img xch_mode=text Tag &lt;img xch_mode=text/&gt;.
+        &lt;br/&gt;Testing img img xch_mode=purehtml Tag &lt;img
+xch_mode=purehtml/&gt;.
+        &lt;br/&gt;Testing img img xch_mode=html Tag &lt;img xch_mode=html/&gt;.
+        &lt;br/&gt;Testing bgcolor &amp; text &amp; *link Attributes in body Tag.
+       &lt;br/&gt;Testing xch_mudtext &lt;xch_mudtext&gt;I'm using
+Alice&lt;/xch_mudtext&gt;
+        &lt;br/&gt;Testing xch_cmd Attribute &lt;a xch_cmd="scratch my
+ring"&gt;Scratch me&lt;/a&gt;.
+        &lt;br/&gt;
+        &lt;br/&gt;Pueblo Forms Test:
+        &lt;form method=xch_cmd &gt;
+                &lt;br/&gt;&lt;select name=sourceselect&gt;
+&lt;option&gt;Select 1&lt;/option&gt;
+&lt;option selected&gt;Select 2&lt;/option&gt;
+&lt;option&gt;Select 3&lt;/option&gt;
+&lt;option&gt;Select 4&lt;/option&gt;
+&lt;option&gt;Select 5&lt;/option&gt;
+&lt;option&gt;Select 6&lt;/option&gt;
+&lt;/select&gt;
+&lt;br/&gt;&lt;textarea name=sourcetextarea rows=5 cols=30 /&gt;
+        &lt;br/&gt;&lt;input type=checkbox checked name=sourcecheckbox
+value=checkbox /&gt;Checkbox 1
+        &lt;br/&gt;&lt;input type=radio checked name=sourceradio
+value=radio /&gt;Radio 1
+        &lt;br/&gt;&lt;input type=number name=sourcenumber size=6
+maxlength=6 /&gt;Number 1
+        &lt;br/&gt;&lt;input type=text name=sourcetext size=12
+maxlength=12 /&gt;Text 1
+        &lt;br/&gt;&lt;input type=password name=sourcepassword size=12
+maxlength=12 /&gt;Password 1
+        &lt;br/&gt;&lt;input type=submit value="Send" /&gt;
+        &lt;br/&gt;&lt;input type=reset value="Reset" /&gt;
+        &lt;/form&gt;
+        &lt;br/&gt;Character Editing Elements:
+        &lt;br/&gt;Testing &lt;b&gt;Bold&lt;/b&gt;.
+        &lt;br/&gt;Testing &lt;i&gt;Italic&lt;/i&gt;.
+        &lt;br/&gt;Testing &lt;u&gt;Underline&lt;/u&gt;.
+        &lt;br/&gt;Testing &lt;strike&gt;Strike&lt;/strike&gt;.
+        &lt;br/&gt;Testing &lt;strong&gt;Strong&lt;/strong&gt;.
+        &lt;br/&gt;Testing &lt;em&gt;Emphasis&lt;/em&gt;.
+        &lt;br/&gt;Testing &lt;cite&gt;Cite&lt;/cite&gt;.
+        &lt;br/&gt;Testing &lt;tt&gt;Typewriter&lt;/tt&gt;.
+        &lt;br/&gt;Testing &lt;code&gt;Code&lt;/code&gt;.
+        &lt;br/&gt;Testing &lt;samp&gt;Samp&lt;/samp&gt;.
+        &lt;br/&gt;
+        &lt;br/&gt;Block Formatting Elements:
+        &lt;br/&gt;Testing Header Rule:
+&lt;hr size=4 width=50% align=center /&gt;
+        &lt;br/&gt;Testing Headers:
+        &lt;h1&gt;Header 1&lt;/h1&gt;
+        &lt;h2&gt;Header 2&lt;/h2&gt;
+        &lt;h3&gt;Header 3&lt;/h3&gt;
+        &lt;h4&gt;Header 4&lt;/h4&gt;
+        &lt;h5&gt;Header 5&lt;/h5&gt;
+        &lt;h6&gt;Header 6&lt;/h6&gt;
+        &lt;br/&gt;&lt;quote&gt;Quote: The quick brown fox jumped over the lazy dog.
+The quick brown fox jumped over the lazy dog. The quick brown fox jumped
+over the lazy dog. &lt;/quote&gt;
+        &lt;address&gt;Address: The quick brown fox jumped over the lazy dog.
+The quick brown fox jumped over the lazy dog. The quick brown fox jumped
+over the lazy dog.&lt;/address&gt;
+        &lt;blockquote&gt;Blockquote: The quick brown fox jumped over the lazy
+dog. The quick brown fox jumped over the lazy dog. The quick brown fox
+jumped over the lazy dog.&lt;/blockquote&gt;
+        Testing Ordered List:&lt;ol&gt;
+       &lt;li&gt;List Item One&lt;/li&gt;
+       &lt;li&gt;List Item Two&lt;/li&gt;
+       &lt;/ol&gt;
+Testing Unordered List:&lt;ul&gt;
+       &lt;li&gt;List Item One&lt;/li&gt;
+       &lt;li&gt;List Item Two&lt;/li&gt;
+       &lt;/ul&gt;
+Testing Directory List:&lt;dir&gt;
+       &lt;li&gt;List Item One&lt;/li&gt;
+       &lt;li&gt;List Item Two&lt;/li&gt;
+       &lt;/dir&gt;
+Testing Menu List:&lt;menu&gt;
+       &lt;li&gt;List Item One&lt;/li&gt;
+       &lt;li&gt;List Item Two&lt;/li&gt;
+       &lt;/menu&gt;
+Testing Definition List&lt;dl&gt;
+&lt;dt&gt;definition term&lt;/dt&gt;
+       &lt;dd&gt;definition data&lt;/dd&gt;
+       &lt;/dl&gt;
+        Testing Font Color &lt;font color=aqua&gt;aqua&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=black&gt;black&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=blue&gt;blue&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=fuchsia&gt;fuchsia&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=gray&gt;gray&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=green&gt;green&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=lime&gt;lime&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=maroon&gt;maroon&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=navy&gt;navy&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=olive&gt;olive&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=purple&gt;purple&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=red&gt;red&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=silver&gt;silver&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=teal&gt;teal&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=white&gt;white&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Color &lt;font color=yellow&gt;yellow&lt;/font&gt;.
+       &lt;br/&gt;Testing Font Multiset &lt;font fgcolor=red bgcolor=white
+size="+3"&gt;Test&lt;/font&gt;.
+        &lt;br/&gt;PARTIALLY FUNCTIONAL MARKUP
+       &lt;br/&gt;Testing Paragraph Tags:
+&lt;br/&gt;&lt;nobr&gt;Testing Nobr. The quick brown fox jumped over the
+lazy dog. The quick brown fox jumped over the lazy dog. The quick brown
+fox jumped over the lazy dog. The quick brown fox jumped over the lazy
+dog.&lt;/nobr&gt;
+&lt;br/&gt;&lt;base&gt;Testing Base. The quick brown fox jumped over the
+lazy dog. The quick brown fox jumped over the lazy dog. The quick brown
+fox jumped over the lazy dog. The quick brown fox jumped over the lazy
+dog.&lt;/base&gt;
+&lt;br/&gt;&lt;xmp&gt;Testing Xmp. The quick brown fox jumped over the lazy
+dog. The quick brown fox jumped over the lazy dog. The quick brown fox
+jumped over the lazy dog. The quick brown fox jumped over the lazy
+dog.&lt;/xmp&gt;
+&lt;br/&gt;&lt;listing&gt;Testing Listing. The quick brown fox jumped over
+the lazy dog. The quick brown fox jumped over the lazy dog. The quick
+brown fox jumped over the lazy dog. The quick brown fox jumped over the
+lazy dog.&lt;/listing&gt;
+&lt;br/&gt;&lt;plaintext&gt;Testing Plaintext. The quick brown fox jumped
+over the lazy dog. The quick brown fox jumped over the lazy dog. The
+quick brown fox jumped over the lazy dog. The quick brown fox jumped
+over the lazy dog.&lt;/plaintext&gt;
+&lt;br/&gt;&lt;pre&gt;Testing Pre. The quick brown fox jumped over the lazy
+dog. The quick brown fox jumped over the lazy dog. The quick brown fox
+jumped over the lazy dog. The quick brown fox jumped over the lazy
+dog.&lt;/pre&gt;
+        &lt;hr/&gt;
+        NOT-FUNCTIONAL PUEBLO MARKUP
+        &lt;br/&gt;Testing Font Color &lt;font color=grey&gt;grey&lt;/font&gt;.
+        &lt;br/&gt;Testing Font Color &lt;font color=brown&gt;brown&lt;/font&gt;.
+        &lt;br/&gt;Testing send Tag &lt;send&gt;touch my ring&lt;/send&gt;.
+        &lt;br/&gt;Testing xch_pane Tag &lt;xch_pane action=open name=map
+xch_panetitle="Map of the City" options="floating persistent fit
+nonsizeable" vspace=5 hspace=5/&gt;
+        &lt;br/&gt;Testing xch_pane Tag &lt;xch_pane action=open name=buttonbar
+options="fit internal" align=bottom href="test.html"/&gt;
+        &lt;br/&gt;Testing href Attribute &lt;a href="test" &gt;Click me&lt;/a&gt;.
+        &lt;br/&gt;Testing img Tag &lt;img src="test" /&gt;.
+        &lt;br/&gt;Testing img Tag &lt;img src=\$prop(this.img-url) /&gt;.
+        &lt;br/&gt;Testing img img xch_alert Tag &lt;img xch_alert/&gt;.
+        &lt;br/&gt;Testing xch_hint Attributes for xch_cmd links &lt;a
+xch_cmd="scratch my ring" xch_hint="scratch my ring"&gt;Scratch me&lt;/a&gt;.
+        &lt;br/&gt;Testing link vlink alink Attributes for xch_cmd links &lt;a
+xch_cmd="scratch my ring" link=red alink=red vlink=red &gt;Scratch me&lt;/a&gt;.
+        &lt;br/&gt;Testing text Attributes for xch_cmd links &lt;a
+xch_cmd="scratch my ring" text=red &gt;Scratch me&lt;/a&gt;.
+        &lt;br/&gt;Testing color Tag &lt;color fore=green back=black &gt; Green on
+Black &lt;/color&gt;.
+        &lt;hr/&gt;
+
+You can also send special SKOOT commands that will command the clients
+to execute Javascript in the window that the client resides in.
+
+The Marrach game uses colors (see the command PROFILE to set default
+colours) and some the Pueblo specific tags (see the command EXITS).
+Grendel's Revenge makes most use of the SKOOT commands. To see these
+features you will need to be using our ActiveX client on Internet
+Explorer.
+
+-- Christopher Allen
+
+------------------------------------------------------------------------
+.. Christopher Allen                                 Skotos Tech Inc. ..
+..                           1512 Walnut St., Berkeley, CA 94709-1513 ..
+.. &lt;http://www.skotos.net&gt;           o510/647-2760x202  f510/647-2761 ..
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Christopher Allen)
+Date: Sun Feb  2 20:03:01 2003
+Subject: Re[2]: [DGD] Impressed with DGD
+
+"Christopher Darque":
+&gt; &gt; If you are considering a game for us, either using your own library
+&gt;
+&gt; First let me say thanks for the effort of cutting and pasting
+&gt; all that info, I appreciate it and I have saved it for serious
+&gt; study. I am fairly familiar with HTML and Pueblo, but I know
+&gt; very little about ActiveX.
+
+You don't really need to know about the clients, just how to interface
+with them. For instance, in our Marrach client, when an object is
+dropped in a room, it also shows up in a popup menu to the right of the
+of the text area. The way this works is that whenever an object arrives
+in a room, a SKOOT event is sent, basically something like "SKOOT 15 a
+rock". The web page recieves the SKOOT 15 messages, and sends it to
+function 15, which in our case is the javascript:
+
+function addObject(str) {
+  var ix, pos, name;
+
+  pos = str.indexOf(' ');
+  if (pos &gt;= 0) {
+    ix = str.substring(0, pos);
+    name = str.substring(pos+1);
+    if (this["objectSet"] == null) {
+        this["objectSet"] = new Object();
+    }
+    this["objectSet"][ix] = name;
+    updateAll();
+//    alert('object ' + name + ' added');
+  }
+}
+
+The fact that we use 15 for addObject is not relevant -- WAP uses a
+completely different set of SKOOT # messages that call Javascripts that
+they wrote for their client. Whatever you can do in Javascript
+dynamically (i.e. without refreshing the page) can be done using this
+technique.
+
+&gt; Second, where might I find more technical docs on the Skotos
+&gt; systems?  If I do decide to propose this to your Company I
+&gt; would almost certainly use your Lib as the starting point.
+
+There is quite a bit of documentation that you get when you are involved
+with developing for us, however, I'd say though we have alot, is never
+enough ;-)
+
+&gt; Your use of non-telnet clients does open up some interesting
+&gt; possibilities, such as a split screen with the room visual
+&gt; at the top and a scrolling text box below for everything
+&gt; else.
+
+It is even possible to have the client be a 1x1 pixel client, and just
+use it to control the dynamic web page.
+
+-- Christopher Allen
+
+------------------------------------------------------------------------
+.. Christopher Allen                                 Skotos Tech Inc. ..
+..                           1512 Walnut St., Berkeley, CA 94709-1513 ..
+.. &lt;http://www.skotos.net&gt;           o510/647-2760x202  f510/647-2761 ..
+</pre>
+<hr>
+<pre>
+From: DGD Mailing List (Christopher Allen)
+Date: Thu Mar 25 10:36:01 2004
+Subject: [DGD] Aliases &amp; Stacked commands
+
+Michael McKiel wrote:
+&gt; Shoulda asked in my last reply :P but anyways...
+&gt; I'm not sure I get the command/action distinction as defined by
+&gt; Skotos.
+&gt;
+&gt; As I previously stated, any object can potentially try to do a given
+&gt; command, and for most cases will be able to, non-livings limited to
+&gt; souls &amp; 'talking' commands. And mobiles restricted from wiz-commands
+&gt; (that might change but don't think it should be needed.)
+&gt;
+&gt; Isn't the action(if we exclude wizard commands) primarily the message
+&gt; displayed from a given command, or a movement of one object into
+&gt;    another, ie: get/give/drop, move to another room, etc.
+&gt;
+&gt; Or does skotos make some other distinction that I am missing?
+
+I'll give a specific example, the verb sip:
+
+&lt;object id="OBJ(Socials:Verbs:S:sip)"&gt;
+  &lt;context/&gt;
+  &lt;Socials:Verb imp="sip" second="sip" third="sips" evoke="forbidden"
+audible="false" private="false" secret="false" obscured="false"
+target-abstracts="false" disabled="false"&gt;
+    &lt;Socials:SocialObjects&gt;
+      &lt;Socials:SocialObject role="dob" direct="true" single="false" raw="false"
+requirement="optional" distance="close"/&gt;
+      &lt;Socials:SocialObject role="iob" direct="false" single="false" raw="false"
+requirement="optional" distance="close"&gt;
+        &lt;Socials:SocObPreps&gt;
+          &lt;Socials:SocObPrep prep="from"/&gt;
+        &lt;/Socials:SocObPreps&gt;
+      &lt;/Socials:SocialObject&gt;
+    &lt;/Socials:SocialObjects&gt;
+    &lt;Socials:VerbActions&gt;
+      &lt;Socials:VerbAction action="sense/taste"/&gt;
+      &lt;Socials:VerbAction action="act/consume"/&gt;
+      &lt;Socials:VerbAction action="act/drink/small"/&gt;
+    &lt;/Socials:VerbActions&gt;
+  &lt;/Socials:Verb&gt;
+&lt;/object&gt;
+
+Basically when someone sips a drink, the action "sense/taste" is triggered,
+sending the signal "sense/taste" to all the appropriate nearby objects. This
+allows the object to tell the actor "You taste a blend of warm milk and dark
+bitter-sweet chocolate with a dash of cinnamon", but also could be used by the
+actor to detect a poison. Next is the "act/consume" signal, which can be used by
+objects to know that something was consumed, for instance, to notice that
+someone was eating in the rectory, or to trigger the poison. Next, there is
+"act/drink/small" which consumes a small amount of the liquid, as opposed to
+guzzling it. Finally, there is a default "verb/sip" signal, for those odd cases
+where use of the specific verb is significant.
+
+Compare this to taste:
+
+&lt;object id="OBJ(Socials:Verbs:T:taste)"&gt;
+  &lt;context/&gt;
+  &lt;Socials:Verb imp="taste" second="taste" third="tastes" evoke="forbidden"
+audible="false" private="false" secret="false" obscured="false"
+target-abstracts="false" disabled="false"&gt;
+    &lt;Socials:SocialObjects&gt;
+      &lt;Socials:SocialObject role="dob" direct="true" single="false" raw="false"
+requirement="optional" distance="close"/&gt;
+      &lt;Socials:SocialObject role="iob" direct="false" single="false" raw="false"
+requirement="optional" distance="close"&gt;
+        &lt;Socials:SocObPreps&gt;
+          &lt;Socials:SocObPrep prep="from"/&gt;
+        &lt;/Socials:SocObPreps&gt;
+      &lt;/Socials:SocialObject&gt;
+    &lt;/Socials:SocialObjects&gt;
+    &lt;Socials:VerbActions&gt;
+      &lt;Socials:VerbAction action="sense/taste"/&gt;
+    &lt;/Socials:VerbActions&gt;
+  &lt;/Socials:Verb&gt;
+&lt;/object&gt;
+
+When someone tastes a drink, only "sense/taste" and "verb/taste" signals are
+triggered, but not "act/consume" or any "act/drink". Thus the taste of the
+mexican hot chocolate is given to the user, and the user could have a chance of
+detecting the poison, but the poison itself would not be consumed (unless it was
+so powerful that it was triggered by "sense/taste" in addition to
+"act/consume").
+
+There are several thousand of verbs in our library, but as a coder you don't
+have to worry about the distinctions between consume, drain, gargle, gulp,
+guzzle, imbibe, lap, lick, quaff, sip, slurp, suck, swig, swallow, swill, taste,
+etc. You only have to code to "sense/taste", "act/consume", "act/drink".
+
+It is also trivial for people to to add additional actions to a verb, for
+instance, "act/touch" could be added to the verb "sip" and all the verbs where
+touch is assumed, and now this signal would be available to players.
+
+In addition to the verb signals, other signals can be sent, for instance, when
+an NPC moves, there are signals sent to all who could observe it. If the lights
+go off, a signal is sent. If someone becomes hungry, a signal is sent.
+
+-- Christopher Allen
+</pre>
+<hr>
+<pre>
+From: DGD Mailing List (Par Winzell)
+Date: Tue Aug 31 06:51:01 2004
+Subject: [DGD] SkotOS 2.0
+
+&gt; On Monday, August 30, 2004, 8:24:24 PM, Par Winzell wrote:
+&gt; PW&gt; It should also be mentioned that the further we get towards 2.0, the
+&gt; PW&gt; less of the code is pure LPC. Some of the modules are almost exclusively
+&gt; PW&gt; Merry/SAM, especially the web-application ones. Not everybody will need
+&gt; PW&gt; to be a hardcore LPC architect.
+&gt; 
+&gt; I'm curious about this, why implement a new interpreted imperative
+&gt; language (Merry) within LPC?  What benefit does it provide over
+&gt; straight LPC?
+
+It's not interpreted in LPC. Merry is compiled into actual LPC. There is 
+no significant speed loss. The benefits are not so much in the language 
+itself but in the fact that it allows little snippets of code to be sent 
+around as data, which is a natural way for us to hook logic onto events.
+
+Zell
+</pre>
+<hr>
+<pre>
+From: DGD Mailing List (Christopher Allen)
+Date: Tue Aug 31 14:41:02 2004
+Subject: [DGD] SkotOS 2.0
+Message-ID: &lt;2f9801c48f92$6134bd60$aa1351d1@artemis&gt;
+
+Par Winzell wrote:
+&gt; It's not interpreted in LPC. Merry is compiled into actual LPC. There
+&gt; is no significant speed loss. The benefits are not so much in the
+&gt; language itself but in the fact that it allows little snippets of
+&gt; code to be sent around as data, which is a natural way for us to hook
+&gt; logic onto events.
+
+The name Merry comes from "Mediated Execution Registry Involving A 
+Dialect Of C" -- which although somewhat a joke because it is the 
+successor of Bilbo "Built In Language Between Object", but the acronym 
+that Merry stands for actually does describe it well.
+
+The key is the the "mediated" part -- this means that Merry is somewhat 
+sandboxed -- not to the scale that Java is, but helpful. For instance, 
+in Merry code we try to ensure that Merry scripts inside game objects 
+only interact with objects that involve the virtual game world, not 
+random other objects it has no business with. Only a limited number of 
+functions can be called from Merry, and even then they are only allowed 
+implicitly, like fetching/setting properties, Act(), etc. File system 
+access is completely disabled, as well as things like starting things up 
+or shutting down processes, and some communications functions.
+
+In addition, the langage is run through a complex parse_string() 
+grammar, which gives us the ability to add some useful synatactic sugar 
+additions: constants, per-thread global $variables, $foo: &lt;expr&gt; 
+function-parameters, you can directly access the property database for 
+values through ${someobject}.property:name, and a few other useful 
+things like the ability to do inline SAM (Skotos Active Markup) with 
+$"{oneof:one|two|three}".
+
+Independent of the Merry language itself, there are a large variety of 
+useful game specific functions, such as EmitTo(), EmitIn(), Set(), etc.
+
+Here is a small code example. A simple torch, which responds (i.e. the 
+"react-") to the signal (what might be called an event) named 
+"react-post:light-dob". This signal is sent to a direct object (i.e. 
+-dob) immediately after (i.e. -post) a verb is used that might turn on a 
+light in an object (such as the verbs light, ignite, etc.):
+/* Standard Flame Scripts   */   
+/* react-post:light-dob     */   
+/* Example by ChristopherA  */   
+      
+   /* If flame-on was set during the reaction, turn trait:flame on */   
+   /* and let setprop-post:trait:flame handle cleaning things up.  */   
+   /* Note: we do this in react-post so that things look clean     */   
+   /* during normal processing of the react:light-dob signal,      */   
+   /* e.g. you don't get the result "You light the flaming torch." */   
+   /* when it isn't actually flaming yet.                          */   
+if ( Get(this,"trait:flame-on") ){       
+      Set( this, "trait:flame", TRUE);       
+      Set( this, "trait:flame-on", FALSE); 
+      /* Now show everyone that a flame has appeared.              */    
+  
+      EmitTo ($actor, "The top of " + Describe($this, $actor, $actor) + 
+" crackles alight.\n");     
+      EmitIn(Get($actor, "base:environment"), "The top of " + 
+Describe($this) + " crackles alight.\n", $actor); 
+   }   
+   
+   /* This is a react-post, so no need to return TRUE; */Note the 
+$actor, $this -- these are per-thread global variables passed to this 
+script. They will be the same for all the signals that were initially 
+caused by the first "light my torch" verb.
+
+Next we have a signal that is sent to objects if a property is changed, 
+called setprop-post. An example of use is when the torch is lit -- 
+either someone interacted with the torch directly (for instance "light 
+my torch" above) or something else lit it (put my torch in fireplace) -- 
+either way, the trait:flame property is set to true and 
+setprop-post:trait:flame is sent to the object.
+
+/* Standard Flame Scripts    */
+/* setprop-post:trait:flame  */
+/* Example by ChristopherA   */
+
+   if ($(hook-property) != "trait:flame") return TRUE;
+
+   /* If a flame exists...   */
+   if ( Get(this,"trait:flame") ){
+      /* reveal the flame and change adjectives on the prime detail */
+      Set( this, "details:flame:hidden", FALSE);
+      Set( this, "details:smoke:hidden", FALSE);
+      Set( this, "details:default:adjectives:flaming", TRUE);
+      Set( this, "details:default:adjectives:lit", TRUE);
+      Set( this, "details:default:adjectives:unlit", FALSE);
+
+      /* if the torch has never been flamed before, scorch it.     */
+      if ( ! (Get(this,"trait:flame:remains")) ) {
+         Set(this, "trait:flame:remains", "It is slightly scorched.");
+      }
+
+      /* Now start the timer which will tick ever 90 seconds      */
+      Set(this, "trait:flame:tick_id", Every("tick", 90));
+
+   }
+   /* ... if a flame does not exist, then hide the flame and      */
+   /* change adjectives on the prime detail.                      */
+   else {
+      Set( this, "details:flame:hidden", TRUE);
+      Set( this, "details:smoke:hidden", TRUE);
+      Set( this, "details:default:adjectives:flaming", FALSE);
+      Set( this, "details:default:adjectives:lit", FALSE);
+      Set( this, "details:default:adjectives:unlit", TRUE);
+
+      /* Now turn of the timer, so it will not tick. */
+      Stop(Get(this, "trait:flame:tick_id"));
+   }
+
+   /* This is a setprop-post, so no need to return TRUE; */Finally, we 
+need a way to emit messages periodically as the torch is burning, and to 
+destroy the torch when it is used up:
+
+/* Standard Flame Scripts    */ 
+/* timer:tick                */ 
+/* Example by ChristopherA   */ 
+ 
+   /* timer:tick is called every X seconds (typically 60 or */ 
+   /* 90 seconds) as set up in the Every() function in      */ 
+   /* the setprop-post:trait:flame merry script.            */ 
+ 
+   object env; object act; int tick; 
+ 
+   /* We've been triggered, so increment our tick count     */ 
+   tick = Get(this, "trait:flame:tick_cnt") + 1; 
+   Set(this, "trait:flame:tick_cnt", tick); 
+ 
+   /* set some variables because timer:tick exists in an    */ 
+   /* an environment where there are very few arguments     */ 
+   /* and you can't rely on where the item. It could be     */ 
+   /* on the floor, in someones bag in the nil, or in       */ 
+   /* the hands of the person who lit it.                   */ 
+ 
+   /* If we are being held, we want our environment output  */ 
+   /* to be in the room of the person who is holding us.    */
+
+   if (env = Get(this, "base:environment")) { 
+    env = Get(env, "base:environment"); 
+   } 
+ 
+   /* If we are being held, we want our actor output        */ 
+   /* to be the person holding us, or the room if the item  */ 
+   /* has been dropped.                                     */
+
+   act = this."base:environment"; 
+   if (act."base:environment") { 
+      /* actor has an environment, all is well */ 
+      env = act."base:environment"; 
+   } else { 
+      /* if act has no environment, we've been dropped and act = env! 
+*/ 
+      env = act; 
+      act = nil; 
+   } 
+ 
+   /* For each tick, do different things...                 */ 
+ 
+   /* ...partially burn out the item                        */ 
+   if (tick == 5) { 
+     Set(this, "trait:flame:remains", "It is about half burned out"); 
+   } 
+   /* ...mostly burn out the item                           */ 
+   if (tick == 10) { 
+      Set(this, "trait:flame:remains", "It is almost burned out."); 
+   } 
+   /* ...complete burn out the item                         */ 
+   if (tick &gt;= 12) { 
+      if ( act != nil ) { 
+          EmitTo(act, Describe(this, nil, act) + " sputters out.\n"); 
+      } 
+      if(this."base:environment") { 
+         EmitIn(env, Describe(this, nil, nil) + " sputters out.\n", 
+act); 
+      } 
+      Set(this, "trait:flame", FALSE); 
+      Set(this, "trait:flame:flammable", FALSE); 
+      Set(this, "trait:flame:remains", "It is completely burned out."); 
+      Set( this, "details:default:adjectives:spent", TRUE); 
+      /* stop us from ticking anymore                       */ 
+      Stop(Get(this, "trait:flame:tick_id")); 
+ 
+      /* Now return false, but set up a delay so that       */ 
+      /* this object can decay in 86400 seconds (1 day)     */ 
+      $delay(86400, FALSE, "4a8d"); 
+ 
+      /* We have to re-establish our local variables, as    */ 
+      /* they are incorrect after a delay.                  */ 
+      Set(this, "trait:flame:tick_cnt", tick); 
+      if (env = Get(this, "base:environment")) { 
+    env = Get(env, "base:environment"); 
+      } 
+      act = this."base:environment"; 
+      if (act."base:environment") { 
+         env = act."base:environment"; 
+      } else { 
+         env = act; 
+         act = nil; 
+      } 
+ 
+      /* If we are not in the nil, then tell people that    */ 
+      /* we are disintegrating...                           */ 
+      if ( act != nil ) { 
+        EmitTo(act, Describe(this, nil, act) + " disintegrates from 
+age.\n"); 
+     } 
+      if (this."base:environment") { 
+         EmitIn(env, Describe(this, nil, nil) + " disintegrates from 
+age.\n", act); 
+     } 
+    /* Ok, we are done. Bye.                              */ 
+      Slay(this); 
+      return FALSE; 
+   } 
+ 
+   /* For every tick, there is a 30% chance of a random emit*/ 
+   switch(random(10)) { 
+      /* Again, if we are not in the nil, do the emits      */ 
+    case 0: { 
+            if ( act != nil ) { 
+               EmitTo(act, "A trail of smoke wisps upwards through the 
+air from " + Describe(this, nil, act) + ".\n"); 
+            } 
+            if(this."base:environment") { 
+            EmitIn(env, "A trail of smoke wisps upwards through the air 
+from " + Describe(this, nil, nil) + ".\n", act); 
+            } 
+    } break; 
+    case 1: { 
+            if(this."base:environment") { 
+               EmitTo(act, "There is a quiet fizzle of hot oil from " + 
+Describe(this, nil, act) + ".\n"); 
+            } 
+            if(this."base:environment") { 
+               EmitIn(env, "There is a quiet fizzle of hot oil from " + 
+Describe(this, nil, nil) + ".\n", act); 
+            } 
+    } break; 
+    case 2: { 
+            if(this."base:environment") { 
+               EmitTo(act, capitalize(Describe(this, nil, act) + " 
+flickers.\n")); 
+            } 
+            if(this."base:environment") { 
+               EmitIn(env, capitalize(Describe(this, nil, nil) + " 
+flickers.\n"), act); 
+            } 
+    } break;
+    default: break;
+   }
+
+The above is only three of about 8 different Merry scripts used by 
+torches.
+
+-- Christopher Allen
+
+------------------------------------------------------------------------
+.. Christopher Allen                                 Skotos Tech Inc. ..
+..                2342 Shattuck Ave Ste #512, Berkeley, CA 94704-1517 ..
+.. www.skotos.net  www.rpg.net       o510/647-2760   f510/849-1717 ..
+</pre>
+<hr>
+<pre>
+From: "Christopher Allen"
+Subject: RE: [DGD] DGD http daemon?
+Date: Wed Feb  9 09:40:01 2005
+
+On Tuesday, February 08, 2005 12:27 PM Stephen Schmidt &lt;&gt; wrote:
+&gt; I gather this daemon runs alongside of the mud, but the players still
+&gt; connect and play via the telnet protocol. 
+&gt; Could this daemon be extended so that the players played primarily
+&gt; through the http protocol, probably using the telnet side only for
+&gt; communications (which are hard to implement in http)?  
+&gt; 
+&gt; There are all kinds of design-related problems with using a primarily
+&gt; http interface for playing the game; those don't interest me so much.
+&gt; The question is really whether this daemon could be the basis for
+&gt; code support for such a design. If it is, then having a version for a
+&gt; general DGD kernel (or even a specific kernel that could be released
+&gt; as a package with the daemon) would be extremely useful.     
+
+There are some advantages for simulating telnet through http -- you can then
+work with proxies and such. We've had a lot of problems with players
+attempting to connect from work, for instance. For now, many cheap firewalls
+don't block port 443 (https) so that relieves some of the problem. I know of
+at least one company that did that, faked http traffic enough that stateful
+firewall proxies would pass it on, but to the user was just like telnet.
+
+A different issue is interface in a web world. You should take a look at the
+Zealous and Alice clients that we use at Skotos -- try out Castle Marrach
+(free trial) using IE (for Alice) or Mozilla/Firebird (for Zealous) to see
+how we use a combination of a telnet client embedded inside a web page, that
+can call the web page and change it, and the web page can call the telnet
+client as well. For one of the best examples of this, try Grendel's Revenge
+(IE only for right now.)
+
+I've said for a while elsewhere that we would be glad to share both clients.
+
+-- Christopher Allen
+</pre>
+<hr>
+<pre>
+From: Erwin Harte
+Subject: [DGD] Re: DGD http daemon?
+Date: Wed Feb  9 16:25:01 2005
+
+On Wed, Feb 09, 2005 at 12:38:59AM -0800, Christopher Allen wrote:
+[...]
+&gt; A different issue is interface in a web world. You should take a look at the
+&gt; Zealous and Alice clients that we use at Skotos -- try out Castle Marrach
+&gt; (free trial) using IE (for Alice) or Mozilla/Firebird (for Zealous) to see
+
+You mean Firefox, its most recent incarnation. ;)  Zealous also works
+with Netscape 7.2 (and newer, I would assume).
+
+Cheers,
+
+Erwin.
+-- 
+Erwin Harte
+</pre>
+<hr>
+<pre>
+From: dgd@dworkin.nl (Par Winzell)
+Date: Tue Mar 22 16:28:01 2005
+Subject: [DGD] Question for programmers and builders
+
+Noah Gibbs wrote:
+
+&gt;   Phantasmal gets a lot of flak for being gratuitously weird, by which I mean
+&gt; "not like 2.4.5".  And that's true, it really isn't.  Would people have an
+&gt; easier time with passing Phrases around if they looked like the markup strings
+&gt; above instead of looking like opaque LWO structures that you have to call
+&gt; functions on?
+
+I think Felix already supplied the vital distinction here... Add, for 
+example, a mudlib-wide interface for editable objects that specify 
+something like
+
+   string export_ascii_state();
+and
+   void import_ascii_state(string state);
+
+and use these in any situation where a developer edits any object 
+through any text-based interface (telnet, web, ...).
+
+The Skotos mudlib does a lot of this. Merry scripts are stored in a 
+half-compiled form (from which the original source can quickly be 
+reconstructed for editing purposes).
+
+SAM -- which is marked-up text much like what you're implementing -- is 
+similarly a "binary" format internally and presented in a text form to 
+the various user interfaces.
+
+To demonstrate a final point in favour of the above, let me outline one 
+of the Skotos mudlib decisions I wish we'd never made -- for out final 
+output post-processing step -- the markup that is not evaluated until 
+it's just about to be sent out to the user, and thus is 100% subjective 
+to that user -- we foolishly opted to use LPC strings directly, 
+marked-up with otherwise unused characters.
+
+Thus if I exclaim something in Dwarfish, the resulting output for 
+onlookers would be something like,
+
+   TAG("Zell exclaims in Dwarfish, \'" +
+           INLANG("My axe is my best friend!", "dwarfish") + "\"",
+       "Social")
+
+which turns not into an LWO or anything, but a rather confusing string:
+
+   \000\003Social\001\000\206\dwarfish|7\001
+   "My axe is my best friend!"\002\002
+
+which is then sent to the user object, which does the final parsing and 
+manipulation. The tags are looked up in the user's profile and turned 
+into e.g. font colour settings -- so they can have all social emotes 
+show up in blue, or whatever -- whereas the language data is used to 
+garble the string depending on the proficiency in the language of the 
+speaker as well as the proficiency of the listener.
+
+The format is extremely quick to parse with parse_string() and it has 
+the one advantage of letting developers continue to use string addition. 
+  For us, its main advantage was that it could be grafted onto the 
+existing mudlib structure without a massive rewrite.
+
+Still, it was a bad idea. Passing these pseudo-strings off as real 
+strings is very problematic. Given any string containing interesting 
+data, a developer is always going to try to parse it or split it up or 
+insert things into it, etc, and this sort of markup is very fragile. 
+Passing interesting yet fragile data that looks like strings but isn't 
+through developer hands is a recipe for disaster.
+
+So. Always abstract the implementation from the interface.
+
+Zell
+</pre>
+
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer_pane">
+    <p>Copyright (C) 2010 Raymond Jennings</p>
+<p>This website is released to the public under the terms of the
+GNU Free Documentation License, Version 1.3 or later</p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+
+  <title>The Phantasmal MUDlib for DGD: Telnet Protocol
+</title>
+  <link href="../../css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header_pane">
+    <p>Phantasmal MUD Lib for DGD</p>
+
+  </div>
+
+  <div class="banner_pane">
+    <table class="banner">
+  <tr>
+    <td class="banner" align="center">
+      <a href="http://validator.w3.org/check/referer"><img src=
+      "http://www.w3.org/Icons/valid-xhtml10" alt=
+      "Valid XHTML 1.0 Strict!" style=
+      "border: 0; width: 88px; height: 31px;"/></a> <a href=
+      "http://jigsaw.w3.org/css-validator/check/referer"><img src=
+      "http://jigsaw.w3.org/css-validator/images/vcss" alt=
+      "Valid CSS!" style=
+      "border: 0; width: 88px; height: 31px;"></a> <a href=
+      "http://sourceforge.net"/></a><img src=
+      "http://sourceforge.net/sflogo.php?group_id=48659&amp;type=2"
+      style="border: 0; width: 125px; height: 37px;" alt=
+      "SourceForge.net Logo"/>
+    </td>
+  </tr>
+</table>
+
+  </div>
+
+  <table>
+    <tr>
+      <td valign="top" class="index_pane">
+        <ul>
+<li><a href="../../index.html">Phantasmal Site</a></li>
+<ul>
+<li><a href="../../History.html">History</a></li>
+<li><a href="../../Installing.html">Installing Baseline Phantasmal</a></li>
+<li><a href="../../Comparison.html">Comparison to Other Libs</a></li>
+<li><a href="../../Credits.html">Credits</a></li>
+<li><a href="../../Current.html">Current Features</a></li>
+<li><a href="../../WhatIsPhantasmal.html">About</a></li>
+<li><a href="../../API/index.html">Phantasmal API</a></li>
+<li><a href="../../Archive/index.html">Archive</a></li>
+<li><a href="../index.html">DGD</a></li>
+<ul>
+<li><a href="../Manual/index.html">DGD Reference Manual</a></li>
+<li><a href="../CSharp_vs_DGD.html">CSharp vs DGD</a></li>
+<li><a href="../Contribute.html">Contributing to DGD</a></li>
+<li><a href="../DGD_Terms.html">DGD Glossary</a></li>
+<li><a href="../Java_vs_DGD.html">Java vs DGD</a></li>
+<li><a href="../MUDs_using_DGD.html">DGD MUDs</a></li>
+<li><a href="../Misc_DGD.html">Miscellaneous DGD</a></li>
+<li><a href="../MudOS_vs_DGD.html">MudOS vs DGD</a></li>
+<li><a href="../SlushBucket.html">Slush Bucket</a></li>
+<li><a href="../Why_DGD.html">Why Use DGD?</a></li>
+<li><a href="../Book/index.html">DGD Reference Manual (legacy)</a></li>
+<li><a href="../Config/index.html">Getting DGD</a></li>
+<li><a href="../GameDesign/index.html">Game Design Issues</a></li>
+<li><a href="../Kernel/index.html">The Kernel Library</a></li>
+<li><a href="../LPC/index.html">Untitled document (LPC/index.base.html)</a></li>
+<li><a href="index.html">Writing a Library</a></li>
+<ul>
+<li><a href="ChangingLPC.html">Changing LPC</a></li>
+<li><a href="Cleanup.html">Object Cleanup</a></li>
+<li><a href="CmdsOrNot.html">&frasl;cmd vs wiztool</a></li>
+<li><a href="CondInherit.html">Conditional Inheritance</a></li>
+<li><a href="Database.html">Object Database</a></li>
+<li><a href="DistStateDump.html">Distribute a State Dump?</a></li>
+<li><a href="DriverObj.html">Designing Driver Objs</a></li>
+<li><a href="FTPD.html">FTPD</a></li>
+<li><a href="GurbaLib.html">GurbaLib</a></li>
+<li><a href="HTTPD.html">HTTPD</a></li>
+<li><a href="HeartBeat.html">State Dumps</a></li>
+<li><a href="Heaven7.html">Heaven7</a></li>
+<li><a href="IMUD3.html">InterMUD3</a></li>
+<li><a href="InterruptCall.html">Interrupt Call</a></li>
+<li><a href="LargeAuto.html">Designing AUTO Objs</a></li>
+<li><a href="LittleIssues.html">Misc Issues</a></li>
+<li><a href="NFS.html">NFS</a></li>
+<li><a href="ObjBinding.html">Object Binding</a></li>
+<li><a href="ObjectManagement.html">Object Management</a></li>
+<li><a href="OtherServices.html">Other Net Services</a></li>
+<li><a href="Persistence.html">Persistent MUDLibs</a></li>
+<li><a href="PlayerBody.html">Player vs Body</a></li>
+<li><a href="Precompiling.html">Precompiling</a></li>
+<li><a href="Reimplementation.html">Reimplementing From Scratch</a></li>
+<li><a href="Releasing.html">Releasing Code</a></li>
+<li><a href="Rlimits.html">Rlimits</a></li>
+<li><a href="ScriptDelays.html">Script Delays</a></li>
+<li><a href="Security.html">Misc Security</a></li>
+<li><a href="Sendmail.html">Outgoing Email</a></li>
+<li><a href="SoYouWanna.html">So You Want To...</a></li>
+<li><a href="StartingNew.html">Start from Scratch?</a></li>
+<li><a href="SupDocs.html">Supplementary Documentation</a></li>
+<li>Telnet Protocol</li>
+<li><a href="UseKernel.html">Using the Kernel</a></li>
+<li><a href="UseMelville.html">Using Melville</a></li>
+<li><a href="UsePhantasmal.html">Using Phantasmal</a></li>
+<li><a href="WebDAV.html">WebDAV</a></li>
+<li><a href="WhatLicense.html">Which License</a></li>
+</ul>
+<li><a href="../Operation/index.html">What Does It Do?</a></li>
+<li><a href="../Programming/index.html">DGD LPC Reference</a></li>
+<li><a href="../Running/index.html">Running a MUD</a></li>
+<li><a href="../Skotos/index.html">Skotos</a></li>
+</ul>
+<li><a href="../../Design/index.html">Design</a></li>
+<li><a href="../../Development/index.html">Development</a></li>
+<li><a href="../../Innsmouth/index.html">Innsmouth MUD</a></li>
+<li><a href="../../Operation/index.html">Phantasmal Operation</a></li>
+<li><a href="../../Setup/index.html">Setup</a></li>
+<li><a href="../../Test/index.html">Test module index</a></li>
+<li><a href="../../Tutorial/index.html">Phantasmal Tutorials</a></li>
+</ul>
+</ul>
+
+      </td>
+      <td valign="top" class="content_pane">
+        <p><a href="index.html">Phantasmal Site</a> > <a href="index.html">DGD</a> > <a href="index.html">Writing a Library</a> > Telnet Protocol</p>
+
+
+
+<h2>Implementing Extended Telnet Protocol in DGD</h2>
+
+<p>DGD has 'telnet ports', which implement the basic telnet
+protocol. However, they do so in a very limited and rigid way, and
+Dworkin has no intention of extending them, or even modifying their
+behavior. The network patch for DGD makes no change in this, and
+the ANSI color patch, while it allows certain outgoing high-ASCII
+characters, still requires patching DGD. What should you do to fix
+this?</p>
+
+<p>The best answer is to implement your own telnet server in LPC
+and connect it to a DGD binary port. This allows you to configure
+the result in LPC rather than patching DGD, and lets you send
+things like international high-ASCII characters and ANSI color
+codes when and how you like. It also lets you handle parts of the
+telnet protocol that DGD does not, such as changes in the screen
+size, and default terminal settings.</p>
+
+<p>If you want to implement the telnet protocol, you may find
+<a href="http://www.cryosphere.org/mud-protocol.html">this page</a>
+highly useful. You'll also want to use some RFCs. Here are some
+potentially useful ones:</p>
+<pre>
+  RFC 854 - Telnet protocol specification.
+  RFC 855 - Telnet option specifications.
+  RFC 1091 - Telnet terminal-type option.
+  
+</pre>
+
+<p>There are bugs in how older MUD servers treat newlines, and the
+same is true of older clients. However, the bugs seem to be all
+different and highly platform-dependent, so you'll need to work
+this one out for yourself. Whether a telnet linefeed is
+newline-then-CR or CR-then-newline or just one or just the other
+seems to be highly platform dependent. When in doubt, be
+tolerant.</p>
+
+<p>Be sure to test with a variety of telnet clients. Even recent
+clients seem to have a variety of odd bugs in the protocol. When
+testing, remember that some clients will even do odd things like
+detect the string "password" and turn off character echo afterward
+rather than relying on the server to turn off echo at the
+appropriate times.</p>
+<pre>
+From: DGD Mailing List (Felix A. Croes)
+Date: Fri Nov  1 15:43:01 2002
+Subject: [DGD] Mexican Characters
+
+Lord Lerkista wrote:
+
+&gt; When in a Mud i type the n-tilde character in a Unix-like terminal i 
+&gt; get a "q" as output,
+&gt; It's something of the telnet protocol that uses DGD??
+
+It's because you are using a Mac.  DGD uses line mode for telnet clients,
+and binary mode is not well-defined for line mode in the telnet protocol.
+DGD uses a hack to enable it on many clients, but apparently it fails on
+the Mac.
+
+I am not planning any changes in DGD's telnet support, since even minor
+changes are bound to break clients on some other platform.  Instead I am
+thinking about a standard protocol for a new mud client, a version of
+which I will probably release in Java.  Oh, and it will connect to the
+binary port, with the protocol level on the server side handled by LPC.
+
+Regards,
+Dworkin
+  
+</pre>
+<hr>
+<pre>
+From: "Felix A. Croes"
+Subject: Re: [DGD] Telnet Echo / Carriage Returns
+Date: Sat, 4 Sep 2004 13:43:01 +0200
+
+Thomas Rice &lt;thomas.rice@gmail.com&gt; wrote:
+
+&gt; Hmm, I noticed I setting on my telnet client (putty) for "local line
+&gt; editing". I had it on "auto", which makes it not drop to the next line
+&gt; when I press enter. If I switch it to "force on" it will then go to
+&gt; the next line like I want.
+&gt;
+&gt; So it seems this is the option I'm looking for. :) Does anyone know
+&gt; what I need to change in the Kernel lib and/or the driver source so
+&gt; that a client with 'auto' will turn this value to on?
+
+DGD always sends \r\n as a newline on telnet connections.  But it does
+not respond to some of the more advanced settings that putty may be
+attempting.  Your options are to modify dgd/src/comm.c to more fully
+implement telnet option negotiation, to change putty settings instead
+of DGD/LPC code, or to connect to the binary port.
+
+Regards,
+Dworkin
+</pre>
+<hr>
+<pre>
+From: Dread Quixadhal
+Subject: [DGD] Re: Telnet Protocol
+Date: Sun, 05 Sep 2004 18:02:54 -0400
+
+Not too long ago, Thomas Rice claimed:
+
+&gt;I'm trying to build on the Kernel Lib and am trying to modify how the
+&gt;MUD treats my input when I telnet in and press enter.
+&gt;
+&gt;At the moment, after I press enter the cursor goes to the beginning of
+&gt;the line (but not down one) and then any response to what I typed is
+&gt;written over the same text.
+&gt;
+&gt;This happens with the Kernel lib I downloaded, as well as the
+&gt;Phantasmal lib I downloaded, but doesn't happen with the Gurba lib,
+&gt;but I haven't been able to figure out how to change it.
+&gt;
+&gt;  
+&gt;
+and not long after that, Felix A. Croes replied:
+
+&gt; &lt;&gt;
+&gt;
+&gt;DGD always sends \r\n as a newline on telnet connections.  But it does
+&gt;not respond to some of the more advanced settings that putty may be
+&gt;attempting.  Your options are to modify dgd/src/comm.c to more fully
+&gt;implement telnet option negotiation, to change putty settings instead
+&gt;of DGD/LPC code, or to connect to the binary port.
+&gt;  
+&gt;
+
+As usual, Dworkin answered my question before I could ask it :)
+
+Not too long ago, I was working on a telnet class in C++ and sent mail 
+to a couple of people claiming to have found the oldest and most trivial 
+bug in all of DikuMUD Land... namely, if you look at the source to just 
+about any of the diku variants, you'll see they send text out the socket 
+with "\n\r" as the line termination characters.  According to the telnet 
+specification, all transmissions in line mode must use "\r\n" as the 
+line termination sequence, if you want to send the opposite, it would 
+actually be sent as "\n\r\0".  The telnet server (which DGD acts as) 
+will always send things in this form and expect them in this form.  It's 
+up to the client (putty, your local /bin/telnet, or tinyfugue, etc...) 
+to correctly translate them back and forth between the telnet spec and 
+your local machine's interpretation.  Most unix-like platforms use "\n", 
+most DOS-like platforms use "\r\n", and I think most pre-OSX macs use "\r".
+
+Needless to say, reporting this bug didn't raise many red flags with 
+anyone who noticed... but what Thomas describes is what I would expect 
+to happen if either side (client or server) wasn't correctly honouring 
+the protocol.  Besides changing settings, you might want to try another 
+client as well.
+</pre>
+<hr>
+<pre>
+Date: Tue Mar 30 12:30:03 2004
+Subject: [DGD] ansi colours
+
+Assuming you're just talking about ANSI escape sequences in general and 
+not a DGD-specific thing, I have a list of the ansi escape sequences on 
+my web-site.  It's not wildly accurate (in terms of which sequences came 
+from which specific standards), but it's what I used for the muds I've 
+worked on and my mud client.
+
+http://bluesock.org/~willg/dev/ansi.html
+
+/will
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Erwin Harte)
+Date: Tue Mar 30 13:45:01 2004
+Subject: [DGD] Re: ansi colours
+
+Have you considered the possibility that the \e is not an escape
+supported by LPC and it really _is_ an 'e' that you send to the
+client?
+
+    &gt; @code "\e"[0]
+    $28 = 101
+
+This is what you want, however:
+
+    &gt; @code "\033"[0]
+    $29 = 27
+
+Hope that helps,
+
+\033[36mErwin\033[0m.
+-- 
+Erwin Harte
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Michael McKiel)
+Date: Tue Mar 30 17:39:07 2004
+Subject: [DGD] ansi colours
+
+These might be of some use to you, when using the escape \033 sequence in
+files the editors or mor'ing interprets the colours and not the codes so
+You can't see the codes used like that in a file, these are visible as
+colours in the mud as well as being editable:
+
+"\x1B[0m"
+"\x1B[1m"
+"\x1B[31m"
+"\x1B[32m"
+"\x1B[33m"
+"\x1B[34m"
+"\x1B[35m"
+"\x1B[36m"
+"\x1B[37m"
+"\x1B[41m"
+"\x1B[42m"
+"\x1B[43m"
+"\x1B[44m"
+"\x1B[45m"
+"\x1B[46m"
+"\x1B[47m"
+
+Also of note, if you enable ansi in DGD, you should consider stripping escape
+sequences in a user's issued command. Else they can change colour on other's
+screen by just sending a 'realescape'&lt;colorcode&gt;. I imagine other strange
+things are possible if you don't strip escape sequences. 
+
+Did this in my old modified melville:
+	result = strlen(str);
+	for (i=0; i &lt; result; i++)
+	{
+		if (str[i] &lt; 32) { str[i] = ' '; }
+	}
+
+Happy Colouring! 
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (dgd@list.imaginary.com)
+Date: Tue Mar 30 18:05:08 2004
+Subject: [DGD] ANSI Patch for DGD 1.2.87
+
+I decided to update the ansi patch, no reason why other than I was fiddling 
+with various stuff which broke dgd badly and got tired of hand editing files 
+after the fifth time I had to repatch from .85 up. 
+
+The patch is now 1 file long and should patch in exactly like the 
+experimental patches do (patch -p 0 &lt; patchname) so long as you put it in 
+the same directory.  It explains that in the top of the patch and all of the 
+old files that were included in the older ansi patch are now included in 
+this one and created in the dgd/doc/ansi directory. 
+
+You can download it at: 
+
+http://psychoticdelusions.net/dgd-patch/ansi-0.99.5-dgd-1.2.87.gz 
+
+It's no better than the old patch it just applies cleanly with the patch 
+command instead of requiring hand editing.  So if you've already patched 
+THIS DOES NOTHING DIFFERENT LEAVE IT BE! :)  I've not tested it with the net 
+patch or epp or any other patches, just vanilla 1.2.87. 
+
+Anywho, 
+
+Shadus
+</pre>
+<hr>
+<pre>
+From: dgd at list.imaginary.com (Josh Dady)
+Date: Wed Mar 31 09:43:10 2004
+Subject: [DGD] ansi colours
+
+On Mar 30, 2004, at 6:38 PM, Michael McKiel wrote:
+
+&gt; Also of note, if you enable ansi in DGD, you should consider stripping 
+&gt; escape
+&gt; sequences in a user's issued command. Else they can change colour on 
+&gt; other's
+&gt; screen by just sending a 'realescape'&lt;colorcode&gt;. I imagine other 
+&gt; strange
+&gt; things are possible if you don't strip escape sequences.
+
+In college, I had a friend who would shout the following when he found 
+a MUD that didn't strip incoming commands:
+   - [clear screen]
+   - [cursor movement] [big/bold/blink] &lt;banner text&gt; [repeat]
+   - [reset scroll region]
+   - [move cursor into new, smaller scroll region]
+
+--
+Joshua P. Dady
+http://www.indecisive.com/
+</pre>
+<hr>
+<pre>
+From: dgd@dworkin.nl (Par Winzell)
+Date: Sat May  7 15:28:01 2005
+Subject: [DGD] Question: Implementing ANSI
+
+Trance Junkie wrote:
+&gt; Hello again, and thanks to everyone who answered my last query.
+&gt; 
+&gt; This might sound a bit backwards after my last question, but I do tend 
+&gt; to think/do things in strange ways sometimes. Basically, I'm wondering 
+&gt; if there's a relatively easy way to add ansi colour capabilities to the 
+&gt; DGD driver. There's a bit of documentation on the SourceForge site on 
+&gt; this, and some more on Dworkin's DGD FAQ, but again I have stumbled into 
+&gt; a couple of hurdles.
+
+To summarize what's already been said and add some of my own --
+
+The DGD driver has 'telnet' ports and 'binary' ports. The telnet ports 
+have an implementation of the Telnet protocol inside DGD itself. I'd 
+probably argue a modern mudlib should implement this on the mudlib 
+level, but it's convenient to have it in DGD, especially because it's 
+such a confusing protocol with so many broken implementations out in the 
+wild. The ANSI patch to DGD, as far as I can remember, just removes a 
+few lines of code in DGD that explicitly strips escape sequences such as 
+ANSI colour codes.
+
+Zell
+</pre>
+
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer_pane">
+    <p>Copyright (C) 2010 Raymond Jennings</p>
+<p>This website is released to the public under the terms of the
+GNU Free Documentation License, Version 1.3 or later</p>
+
+  </div>
+</body>
+</html>

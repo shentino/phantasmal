@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+
+  <title>The Phantasmal MUDlib for DGD: hook_social
+</title>
+  <link href="../../css/default.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header_pane">
+    <p>Phantasmal MUD Lib for DGD</p>
+
+  </div>
+
+  <div class="banner_pane">
+    <table class="banner">
+  <tr>
+    <td class="banner" align="center">
+      <a href="http://validator.w3.org/check/referer"><img src=
+      "http://www.w3.org/Icons/valid-xhtml10" alt=
+      "Valid XHTML 1.0 Strict!" style=
+      "border: 0; width: 88px; height: 31px;"/></a> <a href=
+      "http://jigsaw.w3.org/css-validator/check/referer"><img src=
+      "http://jigsaw.w3.org/css-validator/images/vcss" alt=
+      "Valid CSS!" style=
+      "border: 0; width: 88px; height: 31px;"></a> <a href=
+      "http://sourceforge.net"/></a><img src=
+      "http://sourceforge.net/sflogo.php?group_id=48659&amp;type=2"
+      style="border: 0; width: 125px; height: 37px;" alt=
+      "SourceForge.net Logo"/>
+    </td>
+  </tr>
+</table>
+
+  </div>
+
+  <table>
+    <tr>
+      <td valign="top" class="index_pane">
+        <ul>
+<li><a href="../../index.html">Phantasmal Site</a></li>
+<ul>
+<li><a href="../../History.html">History</a></li>
+<li><a href="../../Installing.html">Installing Baseline Phantasmal</a></li>
+<li><a href="../../Comparison.html">Comparison to Other Libs</a></li>
+<li><a href="../../Credits.html">Credits</a></li>
+<li><a href="../../Current.html">Current Features</a></li>
+<li><a href="../../WhatIsPhantasmal.html">About</a></li>
+<li><a href="../index.html">Phantasmal API</a></li>
+<ul>
+<li><a href="index.html">API Listing</a></li>
+<ul>
+<li><a href="file_idx_10_79.html">trim_empty_tags</a></li>
+<li><a href="file_idx_10_80.html">basic_unq_parse</a></li>
+<li><a href="file_idx_10_81.html">unq_parse_with_dtd</a></li>
+<li><a href="file_idx_11_82.html">parse_to_dtd</a></li>
+<li><a href="file_idx_11_83.html">serialize_to_dtd</a></li>
+<li><a href="file_idx_11_84.html">get_parse_error_stack</a></li>
+<li><a href="file_idx_12_85.html">sub_data_level</a></li>
+<li><a href="file_idx_12_86.html">string_to_channel</a></li>
+<li><a href="file_idx_12_87.html">channel_list</a></li>
+<li><a href="file_idx_12_88.html">unsubscribe_user</a></li>
+<li><a href="file_idx_12_89.html">unsubscribe_user_from_all</a></li>
+<li><a href="file_idx_12_90.html">get_channel_by_name</a></li>
+<li><a href="file_idx_12_91.html">is_subscribed</a></li>
+<li><a href="file_idx_12_92.html">subscribe_user</a></li>
+<li><a href="file_idx_13_100.html">set_welcome_message</a></li>
+<li><a href="file_idx_13_101.html">set_shutdown_message</a></li>
+<li><a href="file_idx_13_102.html">get_start_room</a></li>
+<li><a href="file_idx_13_103.html">get_welcome_message</a></li>
+<li><a href="file_idx_13_93.html">get_suspended_message</a></li>
+<li><a href="file_idx_13_94.html">get_shutdown_message</a></li>
+<li><a href="file_idx_13_95.html">set_start_room</a></li>
+<li><a href="file_idx_13_96.html">set_suspended_message</a></li>
+<li><a href="file_idx_13_97.html">set_meat_locker</a></li>
+<li><a href="file_idx_13_98.html">get_meat_locker</a></li>
+<li><a href="file_idx_13_99.html">set_path_special_object</a></li>
+<li><a href="file_idx_14_104.html">add_deferred_exits</a></li>
+<li><a href="file_idx_14_105.html">exits_in_segment</a></li>
+<li><a href="file_idx_14_106.html">get_name_for_dir</a></li>
+<li><a href="file_idx_14_107.html">clear_exit</a></li>
+<li><a href="file_idx_14_108.html">remove_exit</a></li>
+<li><a href="file_idx_14_109.html">clear_all_exits</a></li>
+<li><a href="file_idx_14_110.html">direction_by_string</a></li>
+<li><a href="file_idx_14_111.html">add_twoway_exit_between</a></li>
+<li><a href="file_idx_14_112.html">get_exit_by_num</a></li>
+<li><a href="file_idx_14_113.html">add_oneway_exit_between</a></li>
+<li><a href="file_idx_14_114.html">get_exit_segments</a></li>
+<li><a href="file_idx_14_115.html">get_all_exits</a></li>
+<li><a href="file_idx_14_116.html">get_short_for_dir</a></li>
+<li><a href="file_idx_14_117.html">num_deferred_exits</a></li>
+<li><a href="file_idx_14_118.html">opposite_direction</a></li>
+<li><a href="file_idx_15_119.html">add_unq_binding</a></li>
+<li><a href="file_idx_15_120.html">rooms_in_segment</a></li>
+<li><a href="file_idx_15_121.html">add_room_to_zone</a></li>
+<li><a href="file_idx_15_122.html">add_room_object</a></li>
+<li><a href="file_idx_15_123.html">remove_room_object</a></li>
+<li><a href="file_idx_15_124.html">rooms_in_zone</a></li>
+<li><a href="file_idx_15_125.html">get_room_by_num</a></li>
+<li><a href="file_idx_15_126.html">add_unq_text_rooms</a></li>
+<li><a href="file_idx_15_127.html">segments_in_zone</a></li>
+<li><a href="file_idx_15_128.html">add_dtd_unq_rooms</a></li>
+<li><a href="file_idx_16_129.html">mobiles_in_segment</a></li>
+<li><a href="file_idx_16_130.html">all_mobiles</a></li>
+<li><a href="file_idx_16_131.html">remove_mobile</a></li>
+<li><a href="file_idx_16_132.html">clone_mobile_by_type</a></li>
+<li><a href="file_idx_16_133.html">add_dtd_unq_mobiles</a></li>
+<li><a href="file_idx_16_134.html">get_mobile_by_num</a></li>
+<li><a href="file_idx_16_135.html">add_unq_text_mobiles</a></li>
+<li><a href="file_idx_16_136.html">add_mobile_number</a></li>
+<li><a href="file_idx_17_137.html">num_socials</a></li>
+<li><a href="file_idx_17_138.html">get_social_string</a></li>
+<li><a href="file_idx_17_139.html">is_valid</a></li>
+<li><a href="file_idx_17_140.html">all_socials</a></li>
+<li><a href="file_idx_18_141.html">get_key</a></li>
+<li><a href="file_idx_18_142.html">match</a></li>
+<li><a href="file_idx_19_143.html">is_alpha</a></li>
+<li><a href="file_idx_19_144.html">is_ident</a></li>
+<li><a href="file_idx_19_145.html">prefix_string</a></li>
+<li><a href="file_idx_19_146.html">alpha_sort_list</a></li>
+<li><a href="file_idx_19_147.html">to_upper</a></li>
+<li><a href="file_idx_19_148.html">trim_whitespace</a></li>
+<li><a href="file_idx_19_149.html">char_to_lower</a></li>
+<li><a href="file_idx_19_150.html">stricmp</a></li>
+<li><a href="file_idx_19_151.html">is_whitespace</a></li>
+<li><a href="file_idx_19_152.html">char_to_upper</a></li>
+<li><a href="file_idx_19_153.html">tree_sprint</a></li>
+<li><a href="file_idx_19_154.html">to_lower</a></li>
+<li><a href="file_idx_19_155.html">mixed_sprint</a></li>
+<li><a href="file_idx_19_156.html">char_is_whitespace</a></li>
+<li><a href="file_idx_19_157.html">strcmp</a></li>
+<li><a href="file_idx_19_158.html">unq_escape</a></li>
+<li><a href="file_idx_19_159.html">string_has_char</a></li>
+<li><a href="file_idx_19_160.html">is_alphanum</a></li>
+<li><a href="file_idx_1_1.html">get_body</a></li>
+<li><a href="file_idx_1_10.html">get_locale</a></li>
+<li><a href="file_idx_1_11.html">get_idle_time</a></li>
+<li><a href="file_idx_1_2.html">send_phrase</a></li>
+<li><a href="file_idx_1_3.html">set_locale</a></li>
+<li><a href="file_idx_1_4.html">message</a></li>
+<li><a href="file_idx_1_5.html">is_admin</a></li>
+<li><a href="file_idx_1_6.html">get_Name</a></li>
+<li><a href="file_idx_1_7.html">get_location</a></li>
+<li><a href="file_idx_1_8.html">send_system_phrase</a></li>
+<li><a href="file_idx_1_9.html">get_name</a></li>
+<li><a href="file_idx_20_161.html">stop_heart_beat</a></li>
+<li><a href="file_idx_20_162.html">set_heart_beat</a></li>
+<li><a href="file_idx_21_163.html">num_zones</a></li>
+<li><a href="file_idx_21_164.html">add_new_zone</a></li>
+<li><a href="file_idx_21_165.html">get_segments_in_zone</a></li>
+<li><a href="file_idx_21_166.html">get_name_for_zone</a></li>
+<li><a href="file_idx_21_167.html">get_zone_for_room</a></li>
+<li><a href="file_idx_2_12.html">query_soundex</a></li>
+<li><a href="file_idx_2_13.html">new_help_file</a></li>
+<li><a href="file_idx_2_14.html">reread_help_files</a></li>
+<li><a href="file_idx_2_15.html">query_soundex_with_keywords</a></li>
+<li><a href="file_idx_2_16.html">new_help_directory</a></li>
+<li><a href="file_idx_2_17.html">query_exact_with_keywords</a></li>
+<li><a href="file_idx_2_18.html">clear_registered_help_dirs</a></li>
+<li><a href="file_idx_2_19.html">clear_help_entries</a></li>
+<li><a href="file_idx_2_20.html">query_exact</a></li>
+<li><a href="file_idx_3_21.html">get_level_by_name</a></li>
+<li><a href="file_idx_3_22.html">write_syslog</a></li>
+<li><a href="file_idx_4_23.html">language_by_name</a></li>
+<li><a href="file_idx_4_24.html">new_simple_english_phrase</a></li>
+<li><a href="file_idx_4_25.html">num_locales</a></li>
+<li><a href="file_idx_4_26.html">locale_name_for_language</a></li>
+<li><a href="file_idx_4_27.html">name_for_language</a></li>
+<li><a href="file_idx_5_28.html">from_dtd_unq</a></li>
+<li><a href="file_idx_5_29.html">to_dtd_unq</a></li>
+<li><a href="file_idx_5_30.html">from_unq_text</a></li>
+<li><a href="file_idx_5_31.html">set_dtd_file</a></li>
+<li><a href="file_idx_5_32.html">set_dtd_text</a></li>
+<li><a href="file_idx_5_33.html">load_from_file</a></li>
+<li><a href="file_idx_5_34.html">set_dtd</a></li>
+<li><a href="file_idx_5_35.html">get_parse_error_stack</a></li>
+<li><a href="file_idx_5_36.html">from_unq</a></li>
+<li><a href="file_idx_5_37.html">to_unq_text</a></li>
+<li><a href="file_idx_6_38.html">can_pass</a></li>
+<li><a href="file_idx_6_39.html">pass</a></li>
+<li><a href="file_idx_6_40.html">is_open</a></li>
+<li><a href="file_idx_6_41.html">is_container</a></li>
+<li><a href="file_idx_6_42.html">is_lockable</a></li>
+<li><a href="file_idx_6_43.html">get_from_location</a></li>
+<li><a href="file_idx_6_44.html">get_destination</a></li>
+<li><a href="file_idx_6_45.html">get_link</a></li>
+<li><a href="file_idx_6_46.html">is_locked</a></li>
+<li><a href="file_idx_6_47.html">get_exit_type</a></li>
+<li><a href="file_idx_6_48.html">get_direction</a></li>
+<li><a href="file_idx_6_49.html">is_openable</a></li>
+<li><a href="file_idx_7_50.html">to_string</a></li>
+<li><a href="file_idx_7_51.html">to_unq_text</a></li>
+<li><a href="file_idx_7_52.html">set_content_by_lang</a></li>
+<li><a href="file_idx_7_53.html">get_content_by_lang</a></li>
+<li><a href="file_idx_7_54.html">trim_whitespace</a></li>
+<li><a href="file_idx_8_55.html">hook_leave</a></li>
+<li><a href="file_idx_8_56.html">close</a></li>
+<li><a href="file_idx_8_57.html">get_type</a></li>
+<li><a href="file_idx_8_58.html">place</a></li>
+<li><a href="file_idx_8_59.html">to_unq_text</a></li>
+<li><a href="file_idx_8_60.html">get_body</a></li>
+<li><a href="file_idx_8_61.html">hook_say</a></li>
+<li><a href="file_idx_8_62.html">hook_emote</a></li>
+<li><a href="file_idx_8_63.html">hook_whisper</a></li>
+<li><a href="file_idx_8_64.html">get_user</a></li>
+<li><a href="file_idx_8_65.html">set_user</a></li>
+<li><a href="file_idx_8_66.html">open</a></li>
+<li><a href="file_idx_8_67.html">emote</a></li>
+<li><a href="file_idx_8_68.html">social</a></li>
+<li><a href="file_idx_8_69.html">say</a></li>
+<li><a href="file_idx_8_70.html">teleport</a></li>
+<li><a href="file_idx_8_71.html">hook_enter</a></li>
+<li><a href="file_idx_8_72.html">whisper</a></li>
+<li><a href="file_idx_8_73.html">move</a></li>
+<li><a href="file_idx_8_74.html">get_number</a></li>
+<li><a href="file_idx_8_75.html">mobile_from_dtd_unq</a></li>
+<li>hook_social</li>
+<li><a href="file_idx_8_77.html">hook_whisper_other</a></li>
+<li><a href="file_idx_9_78.html">get_location</a></li>
+<li><a href="obj_idx1.html">/usr/System/obj/user</a></li>
+<li><a href="obj_idx10.html">/usr/common/obj/basic_unq_parser</a></li>
+<li><a href="obj_idx11.html">/usr/common/obj/unq_dtd</a></li>
+<li><a href="obj_idx12.html">/usr/common/sys/channeld</a></li>
+<li><a href="obj_idx13.html">/usr/common/sys/configd</a></li>
+<li><a href="obj_idx14.html">/usr/common/sys/exitd</a></li>
+<li><a href="obj_idx15.html">/usr/common/sys/mapd</a></li>
+<li><a href="obj_idx16.html">/usr/common/sys/mobiled</a></li>
+<li><a href="obj_idx17.html">/usr/common/sys/sould</a></li>
+<li><a href="obj_idx18.html">/usr/common/sys/soundexd</a></li>
+<li><a href="obj_idx19.html">/usr/common/sys/stringd</a></li>
+<li><a href="obj_idx2.html">/usr/System/sys/helpd</a></li>
+<li><a href="obj_idx20.html">/usr/common/sys/timed</a></li>
+<li><a href="obj_idx21.html">/usr/common/sys/zoned</a></li>
+<li><a href="obj_idx3.html">/usr/System/sys/logd</a></li>
+<li><a href="obj_idx4.html">/usr/System/sys/phrased</a></li>
+<li><a href="obj_idx5.html">/usr/common/lib/dtd_unqable</a></li>
+<li><a href="obj_idx6.html">/usr/common/lib/exit</a></li>
+<li><a href="obj_idx7.html">/usr/common/lib/intl_phrase</a></li>
+<li><a href="obj_idx8.html">/usr/common/lib/mobile</a></li>
+<li><a href="obj_idx9.html">/usr/common/lib/object</a></li>
+</ul>
+</ul>
+<li><a href="../../Archive/index.html">Archive</a></li>
+<li><a href="../../DGD/index.html">DGD</a></li>
+<li><a href="../../Design/index.html">Design</a></li>
+<li><a href="../../Development/index.html">Development</a></li>
+<li><a href="../../Innsmouth/index.html">Innsmouth MUD</a></li>
+<li><a href="../../Operation/index.html">Phantasmal Operation</a></li>
+<li><a href="../../Setup/index.html">Setup</a></li>
+<li><a href="../../Test/index.html">Test module index</a></li>
+<li><a href="../../Tutorial/index.html">Phantasmal Tutorials</a></li>
+</ul>
+</ul>
+
+      </td>
+      <td valign="top" class="content_pane">
+        <p><a href="index.html">Phantasmal Site</a> > <a href="index.html">Phantasmal API</a> > <a href="index.html">API Listing</a> > hook_social</p>
+
+
+
+<h3 style="text-align: center"> API Function: hook_social </h3>
+
+<dl>
+  <dt> Summary: </dt>
+  <dd> notify the mobile that somebody has performed a social
+
+ <br/> <br/> </dd>
+
+  <dt> Defined In LPC Object: </dt>
+  <dd> /usr/common/lib/mobile.c <br/> <br/> </dd>
+
+  <dt> Prototype: </dt>
+  <dd> 	void hook_social(object body, object target, string verb)
+
+ <br/> <br/> </dd>
+
+  <dt> Can Be Called By: </dt>
+  <dd> 	System, Common, Game
+
+ <br/> <br/> </dd>
+
+  <dt> Description: </dt>
+  <dd> <p> 	This function is called when a nearby mobile performs a social
+	action.  The arguments are the body object of the actor, the body
+	of the target, and the verb for the social performed.  If there
+	is no target, nil is passed for the target body.</p>
+<p>	You should access-protect your version of this and all other
+	inherited functions, including upgraded() and destructed().</p>
+<p> </p> </dd>
+
+  <dt> Return Value:</dt>
+  <dd> <p>	None.</p>
+<p> </p> </dd>
+
+  <dt> Errors:</dt>
+  <dd> 	Usually none.
+
+ <br/> <br/> </dd>
+
+  <dt> See Also:</dt>
+  <dd> <a href="file_idx_8_61.html"> hook_say </a>,
+  <a href="file_idx_8_62.html"> hook_emote </a>,
+  <a href="file_idx_8_68.html"> social </a>,
+  <a href="file_idx_8_63.html"> hook_whisper </a>,
+  <a href="file_idx_8_77.html"> hook_whisper_other </a>  </dd>
+</dl>
+
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer_pane">
+    <p>Copyright (C) 2010 Raymond Jennings</p>
+<p>This website is released to the public under the terms of the
+GNU Free Documentation License, Version 1.3 or later</p>
+
+  </div>
+</body>
+</html>
