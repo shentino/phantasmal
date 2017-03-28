@@ -1,3 +1,7 @@
+THIS FILE IS OBSOLETE!
+
+Please consult with the git history for further information.
+
 Release 0.021:
     * Fixed a bug with special include files
 
@@ -197,7 +201,7 @@ Release 0.011:
     * Added generic @delete command that will destroy rooms, exits,
       mobiles or portables.
     * The display of @list_room now scrolls appropriately.
-    
+
 Release 0.010:
 
     * Merged in Keith Dunwoody's patch for merging PORTABLED and MAPD.
