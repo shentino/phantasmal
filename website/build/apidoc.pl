@@ -68,7 +68,7 @@ my ($obj, $obj_index, @objs, $fileref, $file_index);
 $obj_index = 1;
 $file_index = 1;
 foreach $obj (@objs) {
-    foreach $fileref (@{$priv_objs{$obj}}) {
+    foreach $fileref (sort @{$priv_objs{$obj}}) {
 	$fileref->{output_base}
 	= "file_idx_${obj_index}_$file_index.base.html";
 	$fileref->{output_html} = "file_idx_${obj_index}_$file_index.html";
