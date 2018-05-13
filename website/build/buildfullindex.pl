@@ -24,14 +24,14 @@ my @sections = ();
 
 my $index_buffer;
 
-open FILE, "<pageindex.local" or die "Cannot open local base index: $!";
+open FILE, "<.pageindex.local" or die "Cannot open local base index: $!";
 $buffer = join("", <FILE>);
 close FILE;
 @index_lines = split("\n", $buffer);
 
 if (@ARGV) {
 	$watchword = shift @ARGV;
-	open FILE, "<../pageindex.full" or die "Cannot open parent's full index: $!";
+	open FILE, "<../.pageindex.full" or die "Cannot open parent's full index: $!";
 	$buffer = join("", <FILE>);
 	close FILE;
 

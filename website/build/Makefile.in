@@ -27,6 +27,7 @@ ecsubdirs: $(DIRS_RECLEAN)
 $(DIRS_RMAKEFILE): $(BUILD)/Makefile.in
 	echo "PREFIX=../$(PREFIX)" > $@
 	echo "DIR=$(patsubst %/Makefile,%,$@)" >> $@
+	echo "export DIR" >> $@
 	echo "include ../$(BUILD)/Makefile.in" >> $@
 
 $(DIRS_RMAKE): %_make: %/Makefile
@@ -40,23 +41,22 @@ $(DIRS_RECLEAN):
 	rm -f $(patsubst %_eclean,%/Makefile,$@)
 
 clean:
-	rm -f $(HTML) pageindex.local pageindex.full
+	rm -f $(HTML) .pageindex.local .pageindex.full
 
-$(HTML): %.html: %.base.html pageindex.full $(PREFIX)template/*.html
+$(HTML): %.html: %.base.html .pageindex.full $(PREFIX)template/*.html
 	$(PAGEGEN) $<
 
 #index files
-
-pageindex.local: $(BASE) $(patsubst %,%/index.base.html,$(DIRS))
-	$(BUILD)/buildlocalindex.pl > pageindex.local
+.pageindex.local: $(BASE) $(patsubst %,%/index.base.html,$(DIRS))
+	$(BUILD)/buildlocalindex.pl > .pageindex.local
 
 ifdef DIR
-pageindex.full: pageindex.local ../pageindex.full
-	$(BUILD)/buildfullindex.pl $(DIR) > pageindex.full
+.pageindex.full: .pageindex.local ../.pageindex.full
+	$(BUILD)/buildfullindex.pl $(DIR) > .pageindex.full
 else
-pageindex.full: pageindex.local
-	$(BUILD)/buildfullindex.pl > pageindex.full
+.pageindex.full: .pageindex.local
+	$(BUILD)/buildfullindex.pl > .pageindex.full
 endif	
 
-../pageindex.full:
-	$(MAKE) pageindex.full -C ..
+../.pageindex.full:
+	$(MAKE) .pageindex.full -C ..

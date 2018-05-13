@@ -25,7 +25,9 @@ sub read_file
 
 	$read_top = 0;
 
-	if ($readme =~ m~(.*)/index.base.html~) {
+	if ($readme eq 'index.base.html') {
+		$read_title = $ENV{'DIR'};
+	} elsif ($readme =~ m~(.*)/index.base.html~) {
 		$read_title = $1;
 	} else {
 		$readme =~ m~(.*).base.html~;
