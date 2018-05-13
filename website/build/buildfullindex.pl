@@ -34,7 +34,7 @@ if (@ARGV) {
 	open FILE, "<../pageindex.full" or die "Cannot open parent's full index: $!";
 	$buffer = join("", <FILE>);
 	close FILE;
-	
+
 	@upindex_lines = split("\n", $buffer);
 }
 
