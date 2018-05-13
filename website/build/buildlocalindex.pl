@@ -24,7 +24,14 @@ sub read_file
 	my $contents;
 
 	$read_top = 0;
-	$read_title = "Untitled document ($readme)";
+
+	if ($readme =~ m~(.*)/index.base.html~) {
+		$read_title = $1;
+	} else {
+		$readme =~ m~(.*).base.html~;
+		$read_title = $1;
+	}
+
 	$read_error = !open (FILE, "<" . $readme);
 	$read_sequence = "";
 
