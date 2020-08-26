@@ -44,7 +44,7 @@ open(FILE, "<" . $prefix . "template/title.html")
 my $titleline = join("", <FILE>);
 close FILE;
 
-open(FILE, "<pageindex.full")
+open(FILE, "<.pageindex.full")
 	or die "Can't open page index: $!";
 
 my @breadcrumbs;

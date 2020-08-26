@@ -22,19 +22,28 @@ sub read_file
 {
 	my $readme = shift;
 	my $contents;
-	
+
 	$read_top = 0;
-	$read_title = "Untitled document ($readme)";
+
+	if ($readme eq 'index.base.html') {
+		$read_title = $ENV{'DIR'};
+	} elsif ($readme =~ m~(.*)/index.base.html~) {
+		$read_title = $1;
+	} else {
+		$readme =~ m~(.*).base.html~;
+		$read_title = $1;
+	}
+
 	$read_error = !open (FILE, "<" . $readme);
 	$read_sequence = "";
-	
+
 	if ($read_error) {
 		return;
 	}
-	
+
 	$contents = join ("", <FILE>);
 	close FILE;
-	
+
 	$contents =~ m/\@\@TITLE ([^@]*)\@\@/
 		and $read_title = $1;
 
@@ -45,7 +54,7 @@ sub read_file
 			$top_sequence = $read_sequence;
 		}
 	}
-	
+
 	if ($contents =~ m/\@\@SECTION ([^@]*)\@\@/) {
 		$read_section = $1;
 	} else {

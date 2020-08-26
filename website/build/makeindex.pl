@@ -10,7 +10,7 @@ my $depth = shift @ARGV;
 
 # generate the index in the sidebar
 my $index;
-open(FILE, "<pageindex.full")
+open(FILE, "<.pageindex.full")
 	or die "Can't open index.full: $!";
 $buffer = join("", <FILE>);
 my @index_lines = split("\n", $buffer);
